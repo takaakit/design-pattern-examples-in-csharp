@@ -1,0 +1,9 @@
+*.asta.lock
+*.user
+*.exe
+.project
+.cproject
+Release/
+Debug/
+obj/
+.vs/

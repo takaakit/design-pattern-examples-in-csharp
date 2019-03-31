@@ -1,0 +1,53 @@
+// ˅
+using System;
+using System.Collections.Generic;
+using System.Text;
+
+// ˄
+
+namespace BehavioralPatterns.Command
+{
+    // Command to paint a single point
+    public class PaintingCommand : ICommand
+    {
+        // ˅
+        
+        // ˄
+
+        // Painting position x
+        private readonly double paintingPosX;
+
+        // Painting position y
+        private readonly double paintingPosY;
+
+        protected IPaintingTarget paintingTarget;
+
+        public PaintingCommand(IPaintingTarget paintingObject, double paintingPosX, double paintingPosY)
+            // ˅
+            
+            // ˄
+        {
+            // ˅
+            this.paintingPosX = paintingPosX;
+            this.paintingPosY = paintingPosY;
+            this.paintingTarget = paintingObject;
+            
+            // ˄
+        }
+
+        public void Execute()
+        {
+            // ˅
+            paintingTarget.Paint(paintingPosX, paintingPosY);
+            // ˄
+        }
+
+        // ˅
+        
+        // ˄
+    }
+}
+
+// ˅
+
+// ˄
