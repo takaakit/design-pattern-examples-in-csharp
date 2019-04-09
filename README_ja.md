@@ -84,7 +84,7 @@ namespace StructuralPatterns.Composite
 
 **M PLUS プラグイン**
 * [M PLUS プラグインのサイト](https://sites.google.com/view/m-plus-plugin/download)からプラグインをダウンロードしインストールしてください。  
-  **~~バージョン 2.4 以降をダウンロードしてください。~~** バージョン 2.4 は近日公開予定です。まだ公開されていません。  
+  **バージョン 2.4.0 以降をダウンロードしてください。**  
 
 **Visual Studio IDE**
 * [Visual Studio IDE](https://visualstudio.microsoft.com/ja/vs/) をダウンロードしインストールしてください。  

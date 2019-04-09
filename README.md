@@ -84,7 +84,7 @@ Installation
 
 **M PLUS plug-in**
 * Download the plug-in from [M PLUS plug-in site](https://sites.google.com/view/m-plus-plugin/download), and install.  
-  **~~Use ver.2.4 or higher.~~** Ver.2.4 has not been released. Coming soon.
+  **Use ver.2.4.0 or higher.**
 
 **Visual Studio IDE**
 * Download [Visual Studio IDE](https://visualstudio.microsoft.com/vs/), and install.  
