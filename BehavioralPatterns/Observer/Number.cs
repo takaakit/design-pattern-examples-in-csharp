@@ -46,7 +46,7 @@ namespace BehavioralPatterns.Observer
         public void DeleteObserver(IObserver observer)
         {
             // ˅
-            observers.Add(observer);
+            observers.Remove(observer);
             // ˄
         }
 
