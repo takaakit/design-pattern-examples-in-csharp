@@ -64,7 +64,7 @@ namespace BehavioralPatterns.Memento
         {
             // ˅
             Memento memento = new Memento(Money);
-            foreach (string dessert in dessertsName)
+            foreach (string dessert in desserts)
             {
                 if (dessert.StartsWith("Delicious "))   // Add a only delicious dessert
                 {
