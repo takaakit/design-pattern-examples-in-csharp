@@ -41,7 +41,7 @@ namespace StructuralPatterns.Bridge
         public void ImplWrite()
         {
             // ˅
-            Console.WriteLine($":{text}:");     // Enclose a text with "|" and display it.
+            Console.WriteLine($":{text}:");     // Enclose a text with ":" and display it.
             // ˄
         }
 
@@ -55,12 +55,12 @@ namespace StructuralPatterns.Bridge
         private void PrintLine()
         {
             // ˅
-            Console.Write("*");                 // Display "+" mark at the beginning of a frame.
-            for (var i = 0; i < width; i++)     // Display "-" for the number of "width".
+            Console.Write("*");                 // Display "*" mark at the beginning of a frame.
+            for (var i = 0; i < width; i++)     // Display "." for the number of "width".
             {
                 Console.Write(".");
             }
-            Console.Write("*\n");               // Display "+" mark at the end of a frame.
+            Console.Write("*\n");               // Display "*" mark at the end of a frame.
             // ˄
         }
 
