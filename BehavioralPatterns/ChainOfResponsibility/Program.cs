@@ -9,7 +9,7 @@
             Supporter amelia = new SpecialSupporter("Amelia", 153);
             Supporter michael = new SpecialSupporter("Michael", 340);
             Supporter joseph = new LimitedSupporter("Joseph", 250);
-            Supporter lily = new LimitedSupporter("Lily", 250);
+            Supporter lily = new LimitedSupporter("Lily", 350);
 
             // Make a chain.
             emily.SetNext(william).SetNext(amelia).SetNext(michael).SetNext(joseph).SetNext(lily);
