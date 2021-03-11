@@ -34,17 +34,21 @@ namespace BehavioralPatterns.Interpreter
         {
             // ˅
             context.SlideToken("repeat");
+
             number = context.GetNumber();
-            context.NextToken();
-            commandList = new CommandList();
-            commandList.Parse(context);
+            context.SlideToken(number.ToString());
+
+            CommandList aCommandList = new CommandList();
+            aCommandList.Parse(context);
+
+            this.commandList = aCommandList;    // Hold the parsed command list
             // ˄
         }
 
         public override string ToString()
         {
             // ˅
-            return $"[repeat {number} {commandList}]";
+            return $"repeat {number} {commandList}";
             // ˄
         }
 

@@ -14,7 +14,7 @@ namespace BehavioralPatterns.Observer
         
         // ˄
 
-        public int Value
+        public abstract int Value
         {
             // ˅
             get; protected set;
@@ -29,7 +29,7 @@ namespace BehavioralPatterns.Observer
             // ˄
         {
             // ˅
-            this.observers = new List<IObserver>();
+            observers = new List<IObserver>();
             
             // ˄
         }

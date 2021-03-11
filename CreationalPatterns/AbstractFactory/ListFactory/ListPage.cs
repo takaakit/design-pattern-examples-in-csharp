@@ -2,7 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.Text;
-using CreationalPatterns.AbstractFactory.BaseFactory;
+using CreationalPatterns.AbstractFactory.Factory;
 
 // ˄
 
@@ -31,7 +31,7 @@ namespace CreationalPatterns.AbstractFactory.ListFactory
             builder.Append($"<html><head><title>{title}</title></head>\n");
             builder.Append($"<body><h1>{title}</h1>\n");
             builder.Append("<ul>\n");
-            foreach (var content in contents)
+            foreach (Item content in contents)
             {
                 builder.Append(content.ToHTML());
             }

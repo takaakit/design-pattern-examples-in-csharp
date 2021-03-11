@@ -16,15 +16,23 @@ namespace BehavioralPatterns.Interpreter
 
         private string name;
 
+        public Action()
+        {
+            this.name = null;
+        }
+
         public void Parse(Context context)
         {
             // ˅
-            this.name = context.GetToken();
-            context.SlideToken(name);
-            if (name != "forward" && name != "right" && name != "left")
+            string currentToken = context.GetToken();
+            if (currentToken != "forward" && currentToken != "right" && currentToken != "left")
             {
-                throw new System.Exception($"{name} is unknown");
+                throw new System.Exception($"{currentToken} is unknown");
             }
+
+            this.name = currentToken;   // Hold the current token as this action name
+
+            context.SlideToken(currentToken);
             // ˄
         }
 

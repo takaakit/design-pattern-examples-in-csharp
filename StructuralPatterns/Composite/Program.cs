@@ -1,6 +1,9 @@
 ﻿using System;
 
-// Represents a file system composed of files and directories.
+/*
+Represents a file system composed of files and directories. FileSystemElement makes
+it possible to treat File and Directory uniformly.
+ */
 
 namespace StructuralPatterns.Composite
 {
@@ -9,30 +12,28 @@ namespace StructuralPatterns.Composite
         static void Main(string[] args)
         {
             Console.WriteLine("Create a file system...");
-            var rootDir = new Directory("root");
-            var homeDir = new Directory("home");
-            var binDir = new Directory("bin");
-            var etcDir = new Directory("etc");
-            var emilyDir = new Directory("emily");
-            var jamesDir = new Directory("james");
-            var oliviaDir = new Directory("olivia");
 
-            rootDir.Add(homeDir);
-            rootDir.Add(binDir);
-            rootDir.Add(etcDir);
+            Directory binDir = new Directory("bin");
+            File lsFile = new File("ls", 20);
+            binDir.Add(lsFile);
+            File mkdirFile = new File("mkdir", 40);
+            binDir.Add(mkdirFile);
 
-            binDir.Add(new File("ls", 100));
-            binDir.Add(new File("mkdir", 50));
+            Directory emilyDir = new Directory("emily");
+            File homeworkFile = new File("homework.doc", 60);
+            emilyDir.Add(homeworkFile);
+
+            Directory jamesDir = new Directory("james");
+            File appFile = new File("app.exe", 80);
+            jamesDir.Add(appFile);
+
+            Directory homeDir = new Directory("home");
             homeDir.Add(emilyDir);
             homeDir.Add(jamesDir);
-            homeDir.Add(oliviaDir);
 
-            emilyDir.Add(new File("homework.doc", 40));
-            jamesDir.Add(new File("homework.doc", 50));
-            jamesDir.Add(new File("app.exe", 60));
-            oliviaDir.Add(new File("homework.doc", 70));
-            oliviaDir.Add(new File("app.exe", 80));
-            oliviaDir.Add(new File("tips.html", 90));
+            Directory rootDir = new Directory("root");
+            rootDir.Add(homeDir);
+            rootDir.Add(binDir);
 
             rootDir.Print("");
         }

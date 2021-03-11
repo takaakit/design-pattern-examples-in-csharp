@@ -1,4 +1,7 @@
-﻿// Observers observe objects generating a numerical value and display the value.
+﻿/*
+Observers observe objects generating a numerical value and display the value.
+The display formats are digits and bar charts.
+ */
 
 namespace BehavioralPatterns.Observer
 {
@@ -6,11 +9,9 @@ namespace BehavioralPatterns.Observer
     {
         static void Main(string[] args)
         {
-            var number = new RandomNumber();
-            var digitObserver = new DigitObserver();
-            var barChartObserver = new BarChartObserver();
-            number.AddObserver(digitObserver);
-            number.AddObserver(barChartObserver);
+            Number number = new RandomNumber();
+            number.AddObserver(new DigitObserver());
+            number.AddObserver(new BarChartObserver());
             number.Generate();
         }
     }

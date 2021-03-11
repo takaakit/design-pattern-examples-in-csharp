@@ -30,21 +30,21 @@ namespace CreationalPatterns.Prototype
         public IDisplay CreateClone()
         {
             // ˅
-            return new UnderlineDisplay(this.underlineChar);
+            return new UnderlineDisplay(underlineChar);
             // ˄
         }
 
         public void Show(string message)
         {
             // ˅
-            var length = message.Length;
+            int length = message.Length;
             Console.WriteLine($"\"{message}\"");
             Console.Write(" ");
-            for (var i = 0; i < length; i++)
+            for (int i = 0; i < length; i++)
             {
                 Console.Write(underlineChar);
             }
-            Console.WriteLine("");
+            Console.WriteLine();
             // ˄
         }
 

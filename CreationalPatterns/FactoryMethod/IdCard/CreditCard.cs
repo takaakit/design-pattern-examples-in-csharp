@@ -21,14 +21,14 @@ namespace CreationalPatterns.FactoryMethod.IdCard
             // ˄
         }
 
-        internal CreditCard(string owner)
+        public CreditCard(string owner)
             // ˅
             
             // ˄
         {
             // ˅
-            Console.WriteLine($"Make {owner}'s card.");
-            this.Owner = owner;
+            Owner = owner;
+            Console.WriteLine($"Make {Owner}'s card.");
             // ˄
         }
 

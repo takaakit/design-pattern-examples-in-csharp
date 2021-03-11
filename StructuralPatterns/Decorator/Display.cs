@@ -17,7 +17,7 @@ namespace StructuralPatterns.Decorator
         public abstract int Columns
         {
             // ˅
-            get; set;
+            get;
             // ˄
         }
 
@@ -25,7 +25,7 @@ namespace StructuralPatterns.Decorator
         public abstract int Rows
         {
             // ˅
-            get; set;
+            get;
             // ˄
         }
 
@@ -35,7 +35,7 @@ namespace StructuralPatterns.Decorator
         public void Show()
         {
             // ˅
-            for (var i = 0; i < Rows; i++)
+            for (int i = 0; i < Rows; i++)
             {
                 Console.WriteLine(GetLineText(i));
             }

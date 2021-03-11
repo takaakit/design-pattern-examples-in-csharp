@@ -26,7 +26,7 @@ namespace BehavioralPatterns.Iterator
             // ˄
         {
             // ˅
-            this.Title = title;
+            Title = title;
             // ˄
         }
 

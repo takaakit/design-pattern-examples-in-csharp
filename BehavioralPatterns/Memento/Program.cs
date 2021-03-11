@@ -1,46 +1,46 @@
 ﻿using System;
 
 /*
-Dice game collecting fruits.
-
+A dice game in which money increases and decreases:
 * A gamer shakes a dice and the number determine the next state.
-* Gamer's money increases or decreases depending on the number. The gamer sometimes gets desserts.
-* The game is over if the gamer's money runs out.
-*/
+* If the number of dice is even, gamer's money doubles, and if it is odd, gamer's money is halved.
+* If the gamer's money is less than half of the highest amount, it returns to the highest amount.
+* The game is repeated.
+ */
 
 namespace BehavioralPatterns.Memento
 {
     class Program
     {
-        static void Main(string[] args)
+        static void Main()
         {
-            var gamer = new Gamer(100);               // The initial money is 100
-            var memento = gamer.CreateMemento();      // Save the initial state
+            Gamer gamer = new Gamer(100);               // The initial money is 100
+            Memento memento = gamer.CreateMemento();    // Save the initial state
 
-            for (var i = 0; i < 100; i++)
+            for (var i = 0; i < 10; i++)
             {
-                Console.WriteLine($"==== {i}");                 // Display count
-                Console.WriteLine($"Current state: {gamer}");   // Display the current state of the gamer
+                Console.WriteLine($"==== Turn {i + 1}");    // Display count
 
-                gamer.Play();                                   // Play a game
+                gamer.Play();                               // Play a game
 
                 Console.WriteLine($"Gamer's money is {gamer.Money}.");
 
                 // Determine the behavior of the Memento
-                if (gamer.Money > memento.money)
+                if (gamer.Money > memento.Money)
                 {
-                    Console.WriteLine("(Save the current state because money has increased.)");
+                    Console.WriteLine("(Gamers' money is the highest ever, so record the current state.)");
                     memento = gamer.CreateMemento();
                 }
-                else if (gamer.Money < memento.money / 2)
+                else if (gamer.Money < memento.Money / 2)
                 {
-                    Console.WriteLine("(Go back to the previous state because money has decreased.)");
-                    gamer.RestoreMemento(memento);
+                    Console.WriteLine("(Gamer's money is less than half of the highest amount, so return to the recorded state.)");
+                    gamer.SetMemento(memento);
+                    Console.WriteLine($"Gamer's money returns to {gamer.Money}.");
                 }
 
-                System.Threading.Thread.Sleep(1000);
+                Console.WriteLine();
 
-                Console.WriteLine("");
+                System.Threading.Thread.Sleep(1000);
             }
         }
     }

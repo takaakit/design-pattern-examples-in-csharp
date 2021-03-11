@@ -30,25 +30,25 @@ namespace CreationalPatterns.Prototype
         public IDisplay CreateClone()
         {
             // ˅
-            return new FrameDisplay(this.borderChar);
+            return new FrameDisplay(borderChar);
             // ˄
         }
 
         public void Show(string message)
         {
             // ˅
-            var length = message.Length;
-            for (var i = 0; i < length + 4; i++)
+            int length = message.Length;
+            for (int i = 0; i < length + 4; i++)
             {
                 Console.Write(borderChar);
             }
-            Console.WriteLine("");
+            Console.WriteLine();
             Console.WriteLine($"{borderChar} {message} {borderChar}");
-            for (var i = 0; i < length + 4; i++)
+            for (int i = 0; i < length + 4; i++)
             {
                 Console.Write(borderChar);
             }
-            Console.WriteLine("");
+            Console.WriteLine();
             // ˄
         }
 

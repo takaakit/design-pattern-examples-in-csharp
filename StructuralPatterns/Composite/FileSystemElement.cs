@@ -13,17 +13,17 @@ namespace StructuralPatterns.Composite
         
         // ˄
 
-        protected abstract string Name
+        public abstract string Name
         {
             // ˅
-            get; set;
+            get;
             // ˄
         }
 
-        protected abstract int Size
+        public abstract int Size
         {
             // ˅
-            get; set;
+            get;
             // ˄
         }
 

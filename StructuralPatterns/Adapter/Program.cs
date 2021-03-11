@@ -9,7 +9,7 @@ namespace StructuralPatterns.Adapter
 {
     class Program
     {
-        static void Main(string[] args)
+        static void Main()
         {
             IPrint p = new PrintMessageDisplay("Nice to meet you");
             p.PrintWeak();

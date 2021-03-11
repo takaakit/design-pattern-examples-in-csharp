@@ -5,28 +5,26 @@ using System.Text;
 
 // ˄
 
-namespace CreationalPatterns.AbstractFactory.BaseFactory
+namespace CreationalPatterns.AbstractFactory.Factory
 {
-    public abstract class Item
+    public abstract class Link : Item
     {
         // ˅
         
         // ˄
 
-        protected readonly string name;
+        protected readonly string url;
 
-        public Item(string name)
+        public Link(string name, string url)
             // ˅
-            
+            : base(name)
             // ˄
         {
             // ˅
-            this.name = name;
+            this.url = url;
             
             // ˄
         }
-
-        public abstract string ToHTML();
 
         // ˅
         

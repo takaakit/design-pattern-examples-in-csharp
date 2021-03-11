@@ -1,43 +1,42 @@
 ﻿using System;
+using System.IO;
 
-// Create documents in HTML format and text format.
+/*
+Create documents in HTML format and text format. It is possible to create different documents
+in the same construction process.
+ */
 
 namespace CreationalPatterns.Builder
 {
     class Program
     {
-        static void Main(string[] args)
+        static void Main()
         {
-            if (args.Length != 1)
+            Console.WriteLine("Please enter \"plain\" or \"html\":");
+            string inputValue = Console.ReadLine();
+
+            if (inputValue == "plain")
             {
-                ShowUsage();
-            }
-            else if (args[0] == "plain")
-            {
-                var plainTextBuilder = new PlainTextBuilder();
-                var director = new Director(plainTextBuilder);
+                PlainTextBuilder plainTextBuilder = new PlainTextBuilder();
+                Director director = new Director(plainTextBuilder);
                 director.Build();
-                var content = plainTextBuilder.Result;
+                string content = plainTextBuilder.Content;
                 Console.WriteLine(content);
             }
-            else if (args[0] == "html")
+            else if (inputValue == "html")
             {
-                var htmlBuilder = new HTMLBuilder();
-                var director = new Director(htmlBuilder);
+                HTMLBuilder htmlBuilder = new HTMLBuilder();
+                Director director = new Director(htmlBuilder);
                 director.Build();
-                var filename = htmlBuilder.Result;
-                Console.WriteLine($"{filename} has been created.");
+                string fileName = htmlBuilder.FileName;
+                Console.WriteLine($"{fileName} has been created.");
+                Console.WriteLine($"Output File: {Path.Combine(System.Environment.CurrentDirectory, fileName)}");
             }
             else
             {
-                ShowUsage();
+                Console.Error.WriteLine("The value is not \"plain\" or \"html\".");
+                Environment.Exit(1);
             }
-        }
-
-        private static void ShowUsage()
-        {
-            Console.WriteLine("Usage 1: dotnet Builder.dll plain      <- Create a document in plain text.");
-            Console.WriteLine("Usage 2: dotnet Builder.dll html       <- Create a document in HTML.");
         }
     }
 }

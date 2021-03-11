@@ -36,20 +36,21 @@ namespace StructuralPatterns.Facade
         public void CreateSimpleHomepage(string mailAddress, string htmlFileName)
         {
             // ˅
-            var addressBook = DataLibrary.GetInstance().GetData(System.IO.Path.GetDirectoryName(System.Environment.CommandLine) + "/../../../addressbook");
-            var userName = addressBook[mailAddress];
-            var writer = new HtmlWriter(new StreamWriter(htmlFileName));
+            Dictionary<string, string> addressBook = DataLibrary.GetInstance().GetData(System.IO.Path.GetDirectoryName(Environment.CommandLine) + "/../../../addressbook.txt");
+            string userName = addressBook[mailAddress];
+            HtmlWriter writer = new HtmlWriter(new StreamWriter(htmlFileName));
             writer.Heading($"{userName}'s homepage");
             writer.Paragraph($"Welcome to {userName}'s homepage.");
             writer.Paragraph("Please email me at this address.");
             writer.Mailto(mailAddress, userName);
             writer.Close();
             Console.WriteLine($"{htmlFileName} is created for {mailAddress} ({userName})");
+            Console.WriteLine($"Output File: {Path.Combine(System.Environment.CurrentDirectory, htmlFileName)}");
             // ˄
         }
 
         // ˅
-        
+
         // ˄
     }
 }

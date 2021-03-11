@@ -21,9 +21,8 @@ namespace StructuralPatterns.Flyweight
             // ˄
         {
             // ˅
-            this.largeSizeChars = new List<LargeSizeChar>();
-            
-            foreach (var c in stringValue)
+            largeSizeChars = new List<LargeSizeChar>();
+            foreach (char c in stringValue)
             {
                 largeSizeChars.Add(LargeSizeCharFactory.GetInstance().GetLargeSizeChar(c));
             }
@@ -33,9 +32,9 @@ namespace StructuralPatterns.Flyweight
         public void Display()
         {
             // ˅
-            for (var i = 0; i < largeSizeChars.Count; i++)
+            foreach (LargeSizeChar largeSizeChar in largeSizeChars)
             {
-                largeSizeChars[i].Display();
+                largeSizeChar.Display();
             }
             // ˄
         }

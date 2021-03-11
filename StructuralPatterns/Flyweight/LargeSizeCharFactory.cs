@@ -13,7 +13,7 @@ namespace StructuralPatterns.Flyweight
         
         // ˄
 
-        private Dictionary<string, LargeSizeChar> poolChars;
+        private readonly Dictionary<string, LargeSizeChar> poolChars;
 
         private static readonly LargeSizeCharFactory instance = new LargeSizeCharFactory();
 
@@ -23,7 +23,7 @@ namespace StructuralPatterns.Flyweight
             // ˄
         {
             // ˅
-            this.poolChars = new Dictionary<string, LargeSizeChar>();
+            poolChars = new Dictionary<string, LargeSizeChar>();
             
             // ˄
         }
@@ -39,7 +39,7 @@ namespace StructuralPatterns.Flyweight
         public LargeSizeChar GetLargeSizeChar(char charName)
         {
             // ˅
-            LargeSizeChar lsc = null;
+            LargeSizeChar lsc;
             if (poolChars.ContainsKey(charName.ToString()) == false)
             {
                 lsc = new LargeSizeChar(charName);      // Create an instance

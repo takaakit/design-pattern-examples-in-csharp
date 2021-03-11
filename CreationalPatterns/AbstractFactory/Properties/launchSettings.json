@@ -1,8 +1,0 @@
-{
-  "profiles": {
-    "AbstractFactory": {
-      "commandName": "Project",
-      "commandLineArgs": "CreationalPatterns.AbstractFactory.ListFactory.ListFactory"
-    }
-  }
-}

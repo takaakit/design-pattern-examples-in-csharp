@@ -12,7 +12,7 @@ namespace BehavioralPatterns.Mediator
 
         void CreateColleagues();
 
-        void ColleagueChanged(object sender, EventArgs e);
+        void ColleagueChanged();
 
         // ˅
         

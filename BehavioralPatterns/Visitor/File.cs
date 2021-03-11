@@ -17,14 +17,14 @@ namespace BehavioralPatterns.Visitor
         public override string Name
         {
             // ˅
-            get; set;
+            get;
             // ˄
         }
 
         public override int Size
         {
             // ˅
-            get; set;
+            get;
             // ˄
         }
 
@@ -34,8 +34,8 @@ namespace BehavioralPatterns.Visitor
             // ˄
         {
             // ˅
-            this.Name = name;
-            this.Size = size;
+            Name = name;
+            Size = size;
             // ˄
         }
 

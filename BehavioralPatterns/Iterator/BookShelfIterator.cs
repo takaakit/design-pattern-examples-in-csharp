@@ -23,7 +23,7 @@ namespace BehavioralPatterns.Iterator
             // ˄
         {
             // ˅
-            this.index = 0;
+            index = 0;
             this.bookShelf = bookShelf;
             
             // ˄
@@ -39,7 +39,7 @@ namespace BehavioralPatterns.Iterator
         public object Next()
         {
             // ˅
-            var book = bookShelf.GetAt(index);
+            Book book = bookShelf.GetAt(index);
             index++;
             return book;
             // ˄

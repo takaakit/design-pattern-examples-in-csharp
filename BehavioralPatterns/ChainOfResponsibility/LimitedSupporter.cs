@@ -27,7 +27,7 @@ namespace BehavioralPatterns.ChainOfResponsibility
         }
 
         // Troubles with an ID below the limit are handled.
-        protected override bool Handle(Trouble trouble)
+        protected override bool CanHandle(Trouble trouble)
         {
             // ˅
             return trouble.id <= limitId;

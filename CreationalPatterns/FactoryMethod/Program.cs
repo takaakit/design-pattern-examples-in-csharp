@@ -1,13 +1,17 @@
 ﻿using CreationalPatterns.FactoryMethod.Framework;
 using CreationalPatterns.FactoryMethod.IdCard;
 
-// Factory to make ID cards.
+/*
+The subject is a factory to make credit cards. The Factory defines how to create an credit card,
+but the actual credit card is created by the CreditCardFactory.
+The "createProduct()" is called a Factory Method, and it is responsible for manufacturing an object.
+ */
 
 namespace CreationalPatterns.FactoryMethod
 {
     class Program
     {
-        static void Main(string[] args)
+        static void Main()
         {
             Factory factory = new CreditCardFactory();
 

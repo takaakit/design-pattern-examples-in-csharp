@@ -21,10 +21,6 @@ namespace StructuralPatterns.Decorator
             {
                 return message.Length;
             }
-            set
-            {
-
-            }
             // ˄
         }
 
@@ -36,15 +32,11 @@ namespace StructuralPatterns.Decorator
             {
                 return 1;
             }
-            set
-            {
-
-            }
             // ˄
         }
 
         // Message to be displayed
-        private string message;
+        private readonly string message;
 
         public MessageDisplay(string message)
             // ˅

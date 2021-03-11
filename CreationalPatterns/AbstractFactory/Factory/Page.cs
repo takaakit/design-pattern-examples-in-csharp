@@ -6,7 +6,7 @@ using System.Text;
 
 // ˄
 
-namespace CreationalPatterns.AbstractFactory.BaseFactory
+namespace CreationalPatterns.AbstractFactory.Factory
 {
     public abstract class Page
     {
@@ -45,12 +45,13 @@ namespace CreationalPatterns.AbstractFactory.BaseFactory
         public void Output()
         {
             // ˅
-            var fileName = $"{title}.html";
-            using (var writer = new StreamWriter(fileName, false))
+            string fileName = $"{title}.html";
+            using (StreamWriter writer = new StreamWriter(fileName, false))
             {
                 writer.Write(this.ToHTML());
             }
             Console.WriteLine($"{fileName} has been created.");
+            Console.WriteLine($"Output File: {Path.Combine(System.Environment.CurrentDirectory, fileName)}");
             // ˄
         }
 

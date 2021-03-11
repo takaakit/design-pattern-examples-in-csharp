@@ -1,16 +1,17 @@
-﻿namespace BehavioralPatterns.Command
+﻿
+namespace BehavioralPatterns.Command
 {
     partial class AppMain
     {
         /// <summary>
-        /// 必要なデザイナー変数です。
+        ///  Required designer variable.
         /// </summary>
         private System.ComponentModel.IContainer components = null;
 
         /// <summary>
-        /// 使用中のリソースをすべてクリーンアップします。
+        ///  Clean up any resources being used.
         /// </summary>
-        /// <param name="disposing">マネージド リソースを破棄する場合は true を指定し、その他の場合は false を指定します。</param>
+        /// <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
         protected override void Dispose(bool disposing)
         {
             if (disposing && (components != null))
@@ -20,71 +21,76 @@
             base.Dispose(disposing);
         }
 
-        #region Windows フォーム デザイナーで生成されたコード
+        #region Windows Form Designer generated code
 
         /// <summary>
-        /// デザイナー サポートに必要なメソッドです。このメソッドの内容を
-        /// コード エディターで変更しないでください。
+        ///  Required method for Designer support - do not modify
+        ///  the contents of this method with the code editor.
         /// </summary>
         private void InitializeComponent()
         {
-            this.undoButton = new System.Windows.Forms.Button();
-            this.clearButton = new System.Windows.Forms.Button();
-            this.canvas = new System.Windows.Forms.PictureBox();
-            ((System.ComponentModel.ISupportInitialize)(this.canvas)).BeginInit();
+            this.pictureBox = new System.Windows.Forms.PictureBox();
+            this.buttonUndo = new System.Windows.Forms.Button();
+            this.buttonClear = new System.Windows.Forms.Button();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox)).BeginInit();
             this.SuspendLayout();
             // 
-            // undoButton
+            // pictureBox
             // 
-            this.undoButton.Location = new System.Drawing.Point(284, 494);
-            this.undoButton.Name = "undoButton";
-            this.undoButton.Size = new System.Drawing.Size(98, 38);
-            this.undoButton.TabIndex = 0;
-            this.undoButton.Text = "undo";
-            this.undoButton.UseVisualStyleBackColor = true;
-            this.undoButton.Click += new System.EventHandler(this.UndoButton_Click);
+            this.pictureBox.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.pictureBox.BackColor = System.Drawing.SystemColors.Window;
+            this.pictureBox.Location = new System.Drawing.Point(2, 4);
+            this.pictureBox.Name = "pictureBox";
+            this.pictureBox.Size = new System.Drawing.Size(578, 397);
+            this.pictureBox.TabIndex = 0;
+            this.pictureBox.TabStop = false;
             // 
-            // clearButton
+            // buttonUndo
             // 
-            this.clearButton.Location = new System.Drawing.Point(397, 494);
-            this.clearButton.Name = "clearButton";
-            this.clearButton.Size = new System.Drawing.Size(106, 38);
-            this.clearButton.TabIndex = 1;
-            this.clearButton.Text = "clear";
-            this.clearButton.UseVisualStyleBackColor = true;
-            this.clearButton.Click += new System.EventHandler(this.ClearButton_Click);
+            this.buttonUndo.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.buttonUndo.Font = new System.Drawing.Font("Yu Gothic UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.buttonUndo.Location = new System.Drawing.Point(170, 407);
+            this.buttonUndo.Name = "buttonUndo";
+            this.buttonUndo.Size = new System.Drawing.Size(120, 40);
+            this.buttonUndo.TabIndex = 1;
+            this.buttonUndo.TabStop = false;
+            this.buttonUndo.Text = "Undo";
+            this.buttonUndo.UseVisualStyleBackColor = true;
             // 
-            // canvas
+            // buttonClear
             // 
-            this.canvas.BackColor = System.Drawing.SystemColors.Window;
-            this.canvas.Location = new System.Drawing.Point(12, 12);
-            this.canvas.Name = "canvas";
-            this.canvas.Size = new System.Drawing.Size(754, 476);
-            this.canvas.TabIndex = 2;
-            this.canvas.TabStop = false;
-            this.canvas.MouseMove += new System.Windows.Forms.MouseEventHandler(this.Canvas_MouseMove);
+            this.buttonClear.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.buttonClear.Font = new System.Drawing.Font("Yu Gothic UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.buttonClear.Location = new System.Drawing.Point(296, 407);
+            this.buttonClear.Name = "buttonClear";
+            this.buttonClear.Size = new System.Drawing.Size(120, 40);
+            this.buttonClear.TabIndex = 2;
+            this.buttonClear.TabStop = false;
+            this.buttonClear.Text = "Clear";
+            this.buttonClear.UseVisualStyleBackColor = true;
             // 
             // AppMain
             // 
-            this.AcceptButton = this.undoButton;
-            this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 18F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(778, 538);
-            this.Controls.Add(this.canvas);
-            this.Controls.Add(this.clearButton);
-            this.Controls.Add(this.undoButton);
+            this.ClientSize = new System.Drawing.Size(582, 450);
+            this.Controls.Add(this.buttonClear);
+            this.Controls.Add(this.buttonUndo);
+            this.Controls.Add(this.pictureBox);
             this.Name = "AppMain";
             this.Text = "Command Example";
-            ((System.ComponentModel.ISupportInitialize)(this.canvas)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox)).EndInit();
             this.ResumeLayout(false);
 
         }
 
         #endregion
 
-        private System.Windows.Forms.Button undoButton;
-        private System.Windows.Forms.Button clearButton;
-        private System.Windows.Forms.PictureBox canvas;
+        private System.Windows.Forms.PictureBox pictureBox;
+        private System.Windows.Forms.Button buttonUndo;
+        private System.Windows.Forms.Button buttonClear;
     }
 }
 

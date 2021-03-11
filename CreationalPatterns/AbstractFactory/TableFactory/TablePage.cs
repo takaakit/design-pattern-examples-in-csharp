@@ -2,7 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.Text;
-using CreationalPatterns.AbstractFactory.BaseFactory;
+using CreationalPatterns.AbstractFactory.Factory;
 
 // ˄
 
@@ -27,11 +27,11 @@ namespace CreationalPatterns.AbstractFactory.TableFactory
         public override string ToHTML()
         {
             // ˅
-            var builder = new StringBuilder();
+            StringBuilder builder = new StringBuilder();
             builder.Append($"<html><head><title>{title}</title></head><body>\n");
             builder.Append($"<h1>{title}</h1>\n");
             builder.Append("<table width=\"80%\" border=\"3\">\n");
-            foreach (var content in contents)
+            foreach (Item content in contents)
             {
                 builder.Append($"<tr>{content.ToHTML()}</tr>\n");
             }

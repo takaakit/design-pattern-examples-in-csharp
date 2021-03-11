@@ -14,15 +14,12 @@ namespace CreationalPatterns.FactoryMethod.IdCard
         
         // ˄
 
-        private List<string> cardOwners;
-
         public CreditCardFactory()
             // ˅
             
             // ˄
         {
             // ˅
-            this.cardOwners = new List<string>();
             
             // ˄
         }
@@ -31,20 +28,6 @@ namespace CreationalPatterns.FactoryMethod.IdCard
         {
             // ˅
             return new CreditCard(owner);
-            // ˄
-        }
-
-        public override void RegisterProduct(IProduct product)
-        {
-            // ˅
-            cardOwners.Add(((CreditCard)product).Owner);
-            // ˄
-        }
-
-        public List<string> GetCardOwner()
-        {
-            // ˅
-            return cardOwners;
             // ˄
         }
 

@@ -10,22 +10,30 @@ namespace StructuralPatterns.Composite
     public class Directory : FileSystemElement
     {
         // ˅
-        
+
         // ˄
 
-        protected override string Name
+        public override string Name
         {
             // ˅
-            get; set;
+            get;
             // ˄
         }
 
-        protected override int Size
+        public override int Size
         {
             // ˅
-            get; set;
+            get
+            {
+                int size = 0;
+                foreach (FileSystemElement element in elements)
+                {
+                    size += element.Size;
+                }
+                return size;
+            }
             // ˄
-        } = 0;
+        }
 
         private readonly List<FileSystemElement> elements;
 
@@ -35,9 +43,9 @@ namespace StructuralPatterns.Composite
             // ˄
         {
             // ˅
-            this.elements = new List<FileSystemElement>();
-            this.Name = name;
-            
+            Name = name;
+            elements = new List<FileSystemElement>();
+
             // ˄
         }
 
@@ -46,14 +54,14 @@ namespace StructuralPatterns.Composite
         {
             // ˅
             Console.WriteLine($"{upperPath}/{this}");
-            foreach (var element in elements)
+            foreach (FileSystemElement element in elements)
             {
                 element.Print($"{upperPath}/{Name}");
             }
             // ˄
         }
 
-        // Add a element
+        // Add an element
         public FileSystemElement Add(FileSystemElement element)
         {
             // ˅

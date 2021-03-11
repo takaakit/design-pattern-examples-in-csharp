@@ -33,7 +33,7 @@ namespace BehavioralPatterns.TemplateMethod
         public override void Open()
         {
             // ˅
-            WriteLine();                    // Write a line
+            WriteLine();                            // Write a line
             // ˄
         }
 
@@ -47,7 +47,7 @@ namespace BehavioralPatterns.TemplateMethod
         public override void Close()
         {
             // ˅
-            WriteLine();                    // Write a line
+            WriteLine();                            // Write a line
             // ˄
         }
 
@@ -55,7 +55,7 @@ namespace BehavioralPatterns.TemplateMethod
         {
             // ˅
             Console.Write("+");         // Display an end mark "+"
-            for (var i = 0; i < width; i++)
+            for (int i = 0; i < width; i++)
             {
                 Console.Write("-");     // Display a line "-"
             }

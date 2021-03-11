@@ -21,16 +21,16 @@ namespace BehavioralPatterns.Mediator
             // ˄
         } = null;
 
-        private readonly Button button;
+        private readonly CheckBox checkBox;
 
-        public ColleagueButton(Button button)
+        public ColleagueButton(CheckBox checkBox)
             // ˅
             
             // ˄
         {
             // ˅
-            this.button = button;
-            button.Click += new EventHandler(this.Button_Click);
+            this.checkBox = checkBox;
+            checkBox.Click += new EventHandler(this.Button_Click);
             // ˄
         }
 
@@ -38,14 +38,19 @@ namespace BehavioralPatterns.Mediator
         public void SetActivation(bool isEnable)
         {
             // ˅
-            button.Enabled = isEnable;
+            checkBox.Enabled = isEnable;
             // ˄
+        }
+
+        public bool IsPressed()
+        {
+            return checkBox.Checked;
         }
 
         private void Button_Click(object sender, EventArgs e)
         {
             // ˅
-            Mediator.ColleagueChanged(sender, e);
+            Mediator.ColleagueChanged();
             // ˄
         }
 

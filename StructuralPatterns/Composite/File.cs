@@ -10,22 +10,22 @@ namespace StructuralPatterns.Composite
     public class File : FileSystemElement
     {
         // ˅
-        
+
         // ˄
 
-        protected override string Name
+        public override string Name
         {
             // ˅
-            get; set;
+            get;
             // ˄
         }
 
-        protected override int Size
+        public override int Size
         {
             // ˅
-            get; set;
+            get;
             // ˄
-        } = 0;
+        }
 
         public File(string name, int size)
             // ˅
@@ -33,8 +33,8 @@ namespace StructuralPatterns.Composite
             // ˄
         {
             // ˅
-            this.Name = name;
-            this.Size = size;
+            Name = name;
+            Size = size;
             // ˄
         }
 

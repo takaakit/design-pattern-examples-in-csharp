@@ -28,6 +28,7 @@ namespace BehavioralPatterns.Iterator
             // ˄
         {
             // ˅
+            NumberOfBooks = 0;
             books = new Book[maxsize];
             // ˄
         }

@@ -23,7 +23,7 @@ namespace BehavioralPatterns.TemplateMethod
         {
             // ˅
             Open();
-            for (var i = 0; i < 5; i++)     // Repeat write 5 times
+            for (int i = 0; i < 5; i++)     // Repeat write 5 times
             {
                 Write();
             }

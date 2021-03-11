@@ -42,10 +42,15 @@ namespace BehavioralPatterns.Mediator
             // ˄
         }
 
+        public bool IsSelected()
+        {
+            return radioButton.Checked;
+        }
+
         private void RadioButton_CheckedChanged(object sender, EventArgs e)
         {
             // ˅
-            Mediator.ColleagueChanged(sender, e);
+            Mediator.ColleagueChanged();
             // ˄
         }
 

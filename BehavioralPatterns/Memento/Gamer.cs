@@ -21,30 +21,8 @@ namespace BehavioralPatterns.Memento
             // ˄
         }
 
-        // Acquired desserts 
-        private List<string> desserts;
-
         // Random number generator
         private readonly Random random;
-
-        // Dessert name table
-        private static readonly string[] dessertsName = { "Cake", "Candy", "Cookie" };
-
-        // Get a dessert
-        public string Dessert
-        {
-            // ˅
-            get
-            {
-                var prefix = "";
-                if ((int)(random.Next(2)) == 0)
-                {
-                    prefix = "Delicious ";
-                }
-                return prefix + dessertsName[(int)(random.Next(dessertsName.Length))];
-            }
-            // ˄
-        }
 
         public Gamer(int money)
             // ˅
@@ -52,9 +30,8 @@ namespace BehavioralPatterns.Memento
             // ˄
         {
             // ˅
-            this.desserts = new List<String>();
-            this.random = new Random();
             Money = money;
+            random = new Random();
             
             // ˄
         }
@@ -63,24 +40,15 @@ namespace BehavioralPatterns.Memento
         public Memento CreateMemento()
         {
             // ˅
-            Memento memento = new Memento(Money);
-            foreach (string dessert in desserts)
-            {
-                if (dessert.StartsWith("Delicious "))   // Add a only delicious dessert
-                {
-                    memento.AddDessert(dessert);
-                }
-            }
-            return memento;
+            return new Memento(Money);
             // ˄
         }
 
         // Undo status
-        public void RestoreMemento(Memento memento)
+        public void SetMemento(Memento memento)
         {
             // ˅
-            this.Money = memento.money;
-            this.desserts = memento.desserts;
+            Money = memento.Money;
             // ˄
         }
 
@@ -88,24 +56,29 @@ namespace BehavioralPatterns.Memento
         public void Play()
         {
             // ˅
-            var dice = random.Next(6) + 1;  // Shake a dice
+            int dice = random.Next(6) + 1;  // Shake a dice
+            Console.WriteLine($"The number of dice is {dice}.");
+
+            int preMoney = Money;
             switch (dice)
             {
-                case 1:  // In case of 1...Gamer's money increases
-                    Money += 100;
-                    Console.WriteLine("Gamer's money increases.");
-                    break;
-                case 2:  // In case of 2...Gamer's money halves
+                case 1:
+                case 3:
+                case 5:
+                    // In case of odd...Money is halved
                     Money /= 2;
-                    Console.WriteLine("Gamer's money halves.");
+                    Console.WriteLine($"Gamer's money is halved: {preMoney} -> {Money}");
                     break;
-                case 6:  // In case of 6...Gamer gets desserts
-                    var acquiredDessert = Dessert;
-                    Console.WriteLine($"Gamer gets desserts({acquiredDessert})");
-                    desserts.Add(acquiredDessert);
+                case 2:
+                case 4:
+                case 6:
+                    // In case of even...Money doubles
+                    Money *= 2;
+                    Console.WriteLine($"Gamer's money doubles: {preMoney} -> {Money}");
                     break;
                 default: // Other...Nothing happens
-                    Console.WriteLine("Nothing happens.");
+                    Console.Error.WriteLine("Unexpected value.");
+                    Environment.Exit(1);
                     break;
             }
             // ˄
@@ -114,7 +87,7 @@ namespace BehavioralPatterns.Memento
         public override string ToString()
         {
             // ˅
-            return $"[money = {Money}, desserts = {string.Join(", ", desserts)}]";
+            return $"[money = {Money}]";
             // ˄
         }
 

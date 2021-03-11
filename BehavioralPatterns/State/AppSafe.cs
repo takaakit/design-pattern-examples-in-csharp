@@ -38,6 +38,11 @@ namespace BehavioralPatterns.State
                     }
                 }
             });
+
+            this.buttonUse.Click += new System.EventHandler(this.ButtonUse_Click);
+            this.buttonAlarm.Click += new System.EventHandler(this.ButtonAlarm_Click);
+            this.buttonPhone.Click += new System.EventHandler(this.ButtonPhone_Click);
+            this.buttonExit.Click += new System.EventHandler(this.ButtonExit_Click);
             // ˄
         }
 

@@ -15,7 +15,7 @@ namespace StructuralPatterns.Flyweight
         // ˄
 
         // Display data of the large size character
-        private string displayData;
+        private readonly string displayData;
 
         public LargeSizeChar(char charName)
             // ˅
@@ -23,22 +23,21 @@ namespace StructuralPatterns.Flyweight
             // ˄
         {
             // ˅
-            this.displayData = null;
-            
-            var fileName = $"{System.IO.Path.GetDirectoryName(System.Environment.CommandLine)}/../../../big{charName}.txt";
+            displayData = null;
             try
             {
-                var reader = new StreamReader(fileName, System.Text.Encoding.UTF8);
-                var builder = new StringBuilder();
-                var line = "";
+                StreamReader reader = new StreamReader($"{System.IO.Path.GetDirectoryName(System.Environment.CommandLine)}/../../../big{charName}.txt", System.Text.Encoding.UTF8);
+                string line = "";
+                StringBuilder builder = new StringBuilder();
                 while ((line = reader.ReadLine()) != null)
                 {
                     builder.Append(line);
                     builder.Append("\n");
                 }
+                reader.Close();
                 displayData = builder.ToString();
             }
-            catch (Exception)
+            catch
             {
                 displayData = $"{charName}?";
             }
@@ -49,7 +48,7 @@ namespace StructuralPatterns.Flyweight
         public void Display()
         {
             // ˅
-            Console.Write(displayData);
+            Console.WriteLine(displayData);
             // ˄
         }
 

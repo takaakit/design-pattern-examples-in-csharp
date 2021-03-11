@@ -29,16 +29,19 @@ namespace BehavioralPatterns.Interpreter
         public void Parse(Context context)
         {
             // ˅
+            INode aNode;
             if (context.GetToken() == "repeat")
             {
-                node = new Repeat();
-                node.Parse(context);
+                aNode = new Repeat();
+                aNode.Parse(context);
             }
             else
             {
-                node = new Action();
-                node.Parse(context);
+                aNode = new Action();
+                aNode.Parse(context);
             }
+
+            this.node = aNode;      // Hold the parsed node
             // ˄
         }
 

@@ -10,21 +10,19 @@ namespace CreationalPatterns.Builder
     public class PlainTextBuilder : IBuilder
     {
         // ˅
-        
+
         // ˄
 
         // String to output
-        public string Result
+        public string Content
         {
-            // ˅
             get
             {
                 return builder.ToString();
             }
-            // ˄
         }
 
-        private StringBuilder builder;
+        private readonly StringBuilder builder;
 
         public PlainTextBuilder()
             // ˅
@@ -32,7 +30,7 @@ namespace CreationalPatterns.Builder
             // ˄
         {
             // ˅
-            this.builder = new StringBuilder();
+            builder = new StringBuilder();
             
             // ˄
         }
@@ -60,9 +58,9 @@ namespace CreationalPatterns.Builder
         public void CreateItems(List<string> items)
         {
             // ˅
-            for (var i = 0; i < items.Count; i++)
+            foreach (string item in items)
             {
-                builder.Append($"  - {items[i]}\n");                // Items
+                builder.Append($"  - {item}\n");                    // Items
             }
             builder.Append("\n");                                   // Blank line
             // ˄
@@ -76,7 +74,7 @@ namespace CreationalPatterns.Builder
         }
 
         // ˅
-        
+
         // ˄
     }
 }

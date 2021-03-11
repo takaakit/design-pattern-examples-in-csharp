@@ -56,7 +56,7 @@ namespace StructuralPatterns.Bridge
         {
             // ˅
             Console.Write("*");                 // Display "*" mark at the beginning of a frame.
-            for (var i = 0; i < width; i++)     // Display "." for the number of "width".
+            for (int i = 0; i < width; i++)     // Display "." for the number of "width".
             {
                 Console.Write(".");
             }

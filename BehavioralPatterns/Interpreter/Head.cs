@@ -31,8 +31,11 @@ namespace BehavioralPatterns.Interpreter
         {
             // ˅
             context.SlideToken("program");
-            commandList = new CommandList();
-            commandList.Parse(context);
+
+            CommandList aCommandList = new CommandList();
+            aCommandList.Parse(context);
+
+            this.commandList = aCommandList;    // Hold the parsed command list
             // ˄
         }
 

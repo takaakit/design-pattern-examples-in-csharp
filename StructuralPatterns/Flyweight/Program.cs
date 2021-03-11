@@ -1,23 +1,54 @@
 ﻿using System;
 
-// First, create instances for displaying large size characters, then display large size character string using that instances.
+/*
+Display a string consisting of large characters (0-9 digits only).
+Large character objects are not created until they are needed.
+And the created objects are reused.
+
+Example Output
+-----
+Please enter digits (ex. 1212123): 123
+              
+     ####     
+      ###     
+      ###     
+      ###     
+      ###     
+      ###     
+    #######   
+              
+
+              
+   ########   
+         ###  
+         ###  
+   ########   
+  #           
+  #           
+  ##########  
+              
+
+              
+   ########   
+         ###  
+         ###  
+   ########   
+         ###  
+  #      ###  
+   ########
+ */
 
 namespace StructuralPatterns.Flyweight
 {
     class Program
     {
-        static void Main(string[] args)
+        static void Main()
         {
-            if (args.Length != 1)
-            {
-                Console.WriteLine("Usage: dotnet Flyweight.dll digits");
-                Console.WriteLine("Ex.  : dotnet Flyweight.dll 1212123");
-            }
-            else
-            {
-                var bs = new LargeSizeString(args[0]);
-                bs.Display();
-            }
+            Console.WriteLine("Please enter digits (ex. 1212123):");
+            string inputValue = Console.ReadLine();
+
+            LargeSizeString lss = new LargeSizeString(inputValue);
+            lss.Display();
         }
     }
 }

@@ -14,17 +14,17 @@ namespace BehavioralPatterns.Mediator
         
         // ˄
 
-        private ColleagueRadioButton colleagueRadioLogin;
+        private ColleagueRadioButton radioLogin;
 
-        private ColleagueRadioButton colleagueRadioGuest;
+        private ColleagueRadioButton radioGuest;
 
-        private ColleagueTextField colleagueTextUsername;
+        private ColleagueTextField textUsername;
 
-        private ColleagueTextField colleagueTextPassword;
+        private ColleagueTextField textPassword;
 
-        private ColleagueButton colleagueButtonOk;
+        private ColleagueButton buttonOk;
 
-        private ColleagueButton colleagueButtonCancel;
+        private ColleagueButton buttonCancel;
 
         public AppLogin()
             // ˅
@@ -32,12 +32,12 @@ namespace BehavioralPatterns.Mediator
             // ˄
         {
             // ˅
-            this.colleagueRadioLogin = null;
-            this.colleagueRadioGuest = null;
-            this.colleagueTextUsername = null;
-            this.colleagueTextPassword = null;
-            this.colleagueButtonOk = null;
-            this.colleagueButtonCancel = null;
+            this.radioLogin = null;
+            this.radioGuest = null;
+            this.textUsername = null;
+            this.textPassword = null;
+            this.buttonOk = null;
+            this.buttonCancel = null;
             InitializeComponent();
             CreateColleagues();
             // ˄
@@ -46,52 +46,52 @@ namespace BehavioralPatterns.Mediator
         public void CreateColleagues()
         {
             // ˅
-            colleagueRadioGuest = new ColleagueRadioButton(this.radioGuest);
-            colleagueRadioLogin = new ColleagueRadioButton(this.radioLogin);
-            colleagueTextUsername = new ColleagueTextField(this.textUsername);
-            colleagueTextPassword = new ColleagueTextField(this.textPassword);
-            colleagueButtonOk = new ColleagueButton(this.buttonOk);
-            colleagueButtonCancel = new ColleagueButton(this.buttonCancel);
+            radioGuest = new ColleagueRadioButton(this.formsRadioGuest);
+            radioLogin = new ColleagueRadioButton(this.formsRadioLogin);
+            textUsername = new ColleagueTextField(this.formsTextUsername);
+            textPassword = new ColleagueTextField(this.formsTextPassword);
+            buttonOk = new ColleagueButton(this.formsCheckOk);
+            buttonCancel = new ColleagueButton(this.formsCheckCancel);
 
             // Set mediators
-            colleagueRadioGuest.Mediator = this;
-            colleagueRadioLogin.Mediator = this;
-            colleagueTextUsername.Mediator = this;
-            colleagueTextPassword.Mediator = this;
-            colleagueButtonOk.Mediator = this;
-            colleagueButtonCancel.Mediator = this;
+            radioGuest.Mediator = this;
+            radioLogin.Mediator = this;
+            textUsername.Mediator = this;
+            textPassword.Mediator = this;
+            buttonOk.Mediator = this;
+            buttonCancel.Mediator = this;
             // ˄
         }
 
         // Change enable/disable of the Colleagues when notified from the Mediators.
-        public void ColleagueChanged(object sender, EventArgs e)
+        public void ColleagueChanged()
         {
             // ˅
-            if (sender == buttonOk || sender == buttonCancel)
+            if (buttonOk.IsPressed() || buttonCancel.IsPressed())
             {
                 this.Close();
             }
             else
             {
-                if (sender == radioGuest)   // Guest mode
+                if (radioGuest.IsSelected())        // Guest mode
                 {
-                    colleagueTextUsername.SetActivation(false);
-                    colleagueTextPassword.SetActivation(false);
-                    colleagueButtonOk.SetActivation(true);
+                    textUsername.SetActivation(false);
+                    textPassword.SetActivation(false);
+                    buttonOk.SetActivation(true);
                 }
-                else                        // Login mode
+                else                                // Login mode
                 {
-                    colleagueTextUsername.SetActivation(true);
-                    colleagueTextPassword.SetActivation(true);
+                    textUsername.SetActivation(true);
+                    textPassword.SetActivation(true);
 
                     // Judge whether the changed Colleage is enabled or disabled
-                    if (textUsername.Text != "" && textPassword.Text != "")
+                    if (textUsername.IsEmpty() == false && textPassword.IsEmpty() == false)
                     {
-                        colleagueButtonOk.SetActivation(true);
+                        buttonOk.SetActivation(true);
                     }
                     else
                     {
-                        colleagueButtonOk.SetActivation(false);
+                        buttonOk.SetActivation(false);
                     }
                 }
             }

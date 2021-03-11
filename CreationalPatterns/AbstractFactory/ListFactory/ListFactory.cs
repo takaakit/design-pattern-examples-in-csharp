@@ -2,13 +2,13 @@
 using System;
 using System.Collections.Generic;
 using System.Text;
-using CreationalPatterns.AbstractFactory.BaseFactory;
+using CreationalPatterns.AbstractFactory.Factory;
 
 // ˄
 
 namespace CreationalPatterns.AbstractFactory.ListFactory
 {
-    public class ListFactory : Factory
+    public class ListFactory : Factory.Factory
     {
         // ˅
         

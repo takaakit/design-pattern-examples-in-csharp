@@ -42,9 +42,10 @@ namespace BehavioralPatterns.Interpreter
                 }
                 else
                 {
-                    var commandNode = new Command();
-                    commandNode.Parse(context);
-                    nodes.Add(commandNode);
+                    INode aNode = new Command();
+                    aNode.Parse(context);
+
+                    nodes.Add(aNode);   // Hold the parsed node
                 }
             }
             // ˄
@@ -53,7 +54,7 @@ namespace BehavioralPatterns.Interpreter
         public override string ToString()
         {
             // ˅
-            return string.Join(", ", nodes);
+            return $"[{string.Join(", ", nodes)}]";
             // ˄
         }
 

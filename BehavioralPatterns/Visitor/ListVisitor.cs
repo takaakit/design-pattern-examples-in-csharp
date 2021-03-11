@@ -22,7 +22,7 @@ namespace BehavioralPatterns.Visitor
             // ˄
         {
             // ˅
-            this.currentDirectory = "";
+            currentDirectory = "";
             
             // ˄
         }
@@ -40,9 +40,9 @@ namespace BehavioralPatterns.Visitor
         {
             // ˅
             Console.WriteLine($"{currentDirectory}/{directory}");
-            var visitedDirectory = currentDirectory;
+            string visitedDirectory = currentDirectory;
             currentDirectory = currentDirectory + "/" + directory.Name;
-            foreach (var element in directory.Elements)
+            foreach (IElement element in directory.Elements)
             {
                 element.Accept(this);
             }

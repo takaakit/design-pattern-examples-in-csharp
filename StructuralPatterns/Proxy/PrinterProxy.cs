@@ -28,7 +28,7 @@ namespace StructuralPatterns.Proxy
                 {
                     real.printerName = value;
                 }
-                this.currentName = value;
+                currentName = value;
             }
             // ˄
         }
@@ -42,8 +42,8 @@ namespace StructuralPatterns.Proxy
             // ˄
         {
             // ˅
-            this.currentName = name;
-            this.real = null;
+            currentName = name;
+            real = null;
             
             // ˄
         }
@@ -51,22 +51,11 @@ namespace StructuralPatterns.Proxy
         public void Output(string content)
         {
             // ˅
-            CreatePrinter();
-            if (real != null)
-            {
-                real.Output(content);
-            }
-            // ˄
-        }
-
-        // Create an actual printer
-        private void CreatePrinter()
-        {
-            // ˅
             if (real == null)
             {
                 real = new RealPrinter(currentName);
             }
+            real.Output(content);
             // ˄
         }
 

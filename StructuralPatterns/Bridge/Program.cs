@@ -1,18 +1,19 @@
-﻿// Display only one line or display the specified number of lines.
+﻿/*
+Display only one line or display the specified number of lines.
+ */
 
 namespace StructuralPatterns.Bridge
 {
     class Program
     {
-        static void Main(string[] args)
+        static void Main()
         {
             Display d1 = new Display(new TextDisplayImpl("Japan"));
-            MultiLineDisplay d2 = new MultiLineDisplay(new TextDisplayImpl("The United States of America"));
-            MultiLineDisplay d3 = new MultiLineDisplay(new TextDisplayImpl("Brazil"));
             d1.Output();
+
+            MultiLineDisplay d2 = new MultiLineDisplay(new TextDisplayImpl("The United States of America"));
             d2.Output();
-            d3.Output();
-            d3.OutputMultiple(3);
+            d2.OutputMultiple(3);
         }
     }
 }

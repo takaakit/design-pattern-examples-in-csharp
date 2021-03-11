@@ -22,7 +22,7 @@ namespace BehavioralPatterns.Observer
             {
                 Console.Write("*");
             }
-            Console.WriteLine("");
+            Console.WriteLine();
             System.Threading.Thread.Sleep(100);
             // ˄
         }

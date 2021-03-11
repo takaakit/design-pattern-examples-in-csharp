@@ -11,8 +11,12 @@ namespace BehavioralPatterns.Observer
     public class RandomNumber : Number
     {
         // ˅
-        
+
         // ˄
+
+        public override int Value {
+            get; protected set;
+        }
 
         private readonly Random random;
 
@@ -22,8 +26,8 @@ namespace BehavioralPatterns.Observer
             // ˄
         {
             // ˅
-            this.random = new Random();
             Value = 0;
+            random = new Random();
             
             // ˄
         }

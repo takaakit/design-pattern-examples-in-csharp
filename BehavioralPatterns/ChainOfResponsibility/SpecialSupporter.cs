@@ -27,7 +27,7 @@ namespace BehavioralPatterns.ChainOfResponsibility
         }
 
         // Troubles with the specific ID are handled.
-        protected override bool Handle(Trouble trouble)
+        protected override bool CanHandle(Trouble trouble)
         {
             // ˅
             return trouble.id == targetId;

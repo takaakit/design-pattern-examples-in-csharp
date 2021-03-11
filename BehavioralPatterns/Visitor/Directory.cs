@@ -17,7 +17,7 @@ namespace BehavioralPatterns.Visitor
         public override string Name
         {
             // ˅
-            get; set;
+            get;
             // ˄
         }
 
@@ -26,16 +26,12 @@ namespace BehavioralPatterns.Visitor
             // ˅
             get
             {
-                var size = 0;
+                int size = 0;
                 foreach (FileSystemElement element in Elements)
                 {
                     size += element.Size;
                 }
                 return size;
-            }
-            set
-            {
-
             }
             // ˄
         }
@@ -54,7 +50,7 @@ namespace BehavioralPatterns.Visitor
             // ˄
         {
             // ˅
-            this.Name = name;
+            Name = name;
             // ˄
         }
 
@@ -66,7 +62,7 @@ namespace BehavioralPatterns.Visitor
             // ˄
         }
 
-        // Add an entry
+        // Add an element
         public FileSystemElement Add(FileSystemElement element)
         {
             // ˅

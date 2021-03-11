@@ -1,37 +1,21 @@
-﻿// Display a character string with a decorative frame.
+﻿/*
+Display a string with decorative frames. The frames can be combined arbitrarily.
+ */
 
 namespace StructuralPatterns.Decorator
 {
     class Program
     {
-        static void Main(string[] args)
+        static void Main()
         {
             Display displayA = new MessageDisplay("Nice to meet you.");
             displayA.Show();
 
-            Display displayB = new SideFrame(displayA, '!');
+            Display displayB = new SideFrame(new MessageDisplay("Nice to meet you."), '!');
             displayB.Show();
 
-            Display displayC = new FullFrame(displayB);
+            Display displayC = new FullFrame(new SideFrame(new MessageDisplay("Nice to meet you."), '!'));
             displayC.Show();
-
-            Display displayD = new SideFrame(
-                new FullFrame(
-                    new FullFrame(
-                        new SideFrame(
-                            new SideFrame(
-                                new FullFrame(
-                                    new MessageDisplay("See you again.")
-                                    ),
-                                '#'
-                                ),
-                            '#'
-                            )
-                        )
-                    ),
-                '#'
-                );
-            displayD.Show();
         }
     }
 }

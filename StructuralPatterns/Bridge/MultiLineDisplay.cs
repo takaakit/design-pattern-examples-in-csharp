@@ -28,7 +28,7 @@ namespace StructuralPatterns.Bridge
         {
             // ˅
             Open();
-            for (var i = 0; i < times; i++)
+            for (int i = 0; i < times; i++)
             {
                 Write();
             }

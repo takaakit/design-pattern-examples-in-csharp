@@ -1,12 +1,10 @@
 ﻿using System;
 
 /*
-A game of rock-scissors-paper.
-There are two strategies below.
-
-* When winning a game, show the same hand at the next time.
-* Calculate a hand from the previous hand stochastically.
-*/
+A game of rock-scissors-paper. Two strategies are available:
+* Random Strategy: showing a random hand signal.
+* Mirror Strategy: showing a hand signal from the previous opponent's hand signal.
+ */
 
 namespace BehavioralPatterns.Strategy
 {
@@ -14,45 +12,39 @@ namespace BehavioralPatterns.Strategy
     {
         static void Main(string[] args)
         {
-            if (args.Length != 2)
-            {
-                Console.WriteLine("Usage: dotnet Strategy.dll RandomSeedNumber1 RandomSeedNumber2");
-                Console.WriteLine("Ex.  : dotnet Strategy.dll 314 15");
-            }
-            else
-            {
-                int randomSeed1 = int.Parse(args[0]);
-                int randomSeed2 = int.Parse(args[1]);
-                var player1 = new Player("Emily", new StrategyA(randomSeed1));
-                var player2 = new Player("James", new StrategyB(randomSeed2));
+            Player player1 = new Player("Emily", new RandomStrategy());
+            Player player2 = new Player("James", new MirrorStrategy());
 
-                for (var i = 0; i < 100; i++)
+            for (var i = 0; i < 100; i++)
+            {
+                HandSignal handOfPlayer1 = player1.ShowHandSignal();
+                HandSignal handOfPlayer2 = player2.ShowHandSignal();
+                GameResultType resultOfPlayer1;
+                GameResultType resultOfPlayer2;
+                if (handOfPlayer1.IsStrongerThan(handOfPlayer2))
                 {
-                    var nextHand1 = player1.NextHand();
-                    var nextHand2 = player2.NextHand();
-                    if (nextHand1.IsStrongerThan(nextHand2))
-                    {
-                        Console.WriteLine($"Winner: {player1}");
-                        player1.Won();
-                        player2.Lost();
-                    }
-                    else if (nextHand2.IsStrongerThan(nextHand1))
-                    {
-                        Console.WriteLine($"Winner: {player2}");
-                        player1.Lost();
-                        player2.Won();
-                    }
-                    else
-                    {
-                        Console.WriteLine("Draw...");
-                        player1.Drew();
-                        player2.Drew();
-                    }
+                    Console.WriteLine($"Winner: {player1}");
+                    resultOfPlayer1 = GameResultType.Win;
+                    resultOfPlayer2 = GameResultType.Loss;
                 }
-                Console.WriteLine("RESULT:");
-                Console.WriteLine(player1);
-                Console.WriteLine(player2);
+                else if (handOfPlayer2.IsStrongerThan(handOfPlayer1))
+                {
+                    Console.WriteLine($"Winner: {player2}");
+                    resultOfPlayer1 = GameResultType.Loss;
+                    resultOfPlayer2 = GameResultType.Win;
+                }
+                else
+                {
+                    Console.WriteLine("Draw...");
+                    resultOfPlayer1 = GameResultType.Draw;
+                    resultOfPlayer2 = GameResultType.Draw;
+                }
+                player1.NotifyGameResult(resultOfPlayer1, handOfPlayer1, handOfPlayer2);
+                player2.NotifyGameResult(resultOfPlayer2, handOfPlayer2, handOfPlayer1);
             }
+            Console.WriteLine("RESULT:");
+            Console.WriteLine(player1);
+            Console.WriteLine(player2);
         }
     }
 }

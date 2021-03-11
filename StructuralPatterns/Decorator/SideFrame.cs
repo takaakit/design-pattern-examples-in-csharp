@@ -21,10 +21,6 @@ namespace StructuralPatterns.Decorator
             {
                 return 1 + display.Columns + 1;
             }
-            set
-            {
-
-            }
             // ˄
         }
 
@@ -35,10 +31,6 @@ namespace StructuralPatterns.Decorator
             get
             {
                 return display.Rows;
-            }
-            set
-            {
-
             }
             // ˄
         }

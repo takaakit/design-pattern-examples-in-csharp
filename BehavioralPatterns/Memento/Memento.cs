@@ -14,10 +14,10 @@ namespace BehavioralPatterns.Memento
         // ˄
 
         // Money
-        internal int money;
-
-        // Desserts
-        internal List<string> desserts;
+        public int Money
+        {
+            get; private set;
+        }
 
         public Memento(int money)
             // ˅
@@ -25,17 +25,8 @@ namespace BehavioralPatterns.Memento
             // ˄
         {
             // ˅
-            this.money = money;
-            this.desserts = new List<string>();
+            Money = money;
             
-            // ˄
-        }
-
-        // Add a dessert
-        internal void AddDessert(string dessert)
-        {
-            // ˅
-            desserts.Add(dessert);
             // ˄
         }
 

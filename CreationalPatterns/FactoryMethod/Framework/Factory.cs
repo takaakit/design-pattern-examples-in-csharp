@@ -16,15 +16,11 @@ namespace CreationalPatterns.FactoryMethod.Framework
         public IProduct Create(string owner)
         {
             // ˅
-            IProduct product = CreateProduct(owner);
-            RegisterProduct(product);
-            return product;
+            return CreateProduct(owner);
             // ˄
         }
 
         public abstract IProduct CreateProduct(string owner);
-
-        public abstract void RegisterProduct(IProduct product);
 
         // ˅
         

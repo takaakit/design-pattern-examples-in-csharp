@@ -24,7 +24,7 @@ namespace BehavioralPatterns.ChainOfResponsibility
         }
 
         // No troubles are handled.
-        protected override bool Handle(Trouble trouble)
+        protected override bool CanHandle(Trouble trouble)
         {
             // ˅
             return false;

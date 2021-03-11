@@ -16,14 +16,14 @@ namespace BehavioralPatterns.Visitor
         public abstract string Name
         {
             // ˅
-            get; set;
+            get;
             // ˄
         }
 
         public abstract int Size
         {
             // ˅
-            get; set;
+            get;
             // ˄
         }
 

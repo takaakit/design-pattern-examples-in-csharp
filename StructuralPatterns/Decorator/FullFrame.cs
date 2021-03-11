@@ -21,10 +21,6 @@ namespace StructuralPatterns.Decorator
             {
                 return 1 + display.Columns + 1;
             }
-            set
-            {
-
-            }
             // ˄
         }
 
@@ -35,10 +31,6 @@ namespace StructuralPatterns.Decorator
             get
             {
                 return 1 + display.Rows + 1;
-            }
-            set
-            {
-
             }
             // ˄
         }
@@ -73,8 +65,8 @@ namespace StructuralPatterns.Decorator
         private string CreateLine(char ch, int size)
         {
             // ˅
-            var builder = new StringBuilder();
-            for (var i = 0; i < size; i++)
+            StringBuilder builder = new StringBuilder();
+            for (int i = 0; i < size; i++)
             {
                 builder.Append(ch);
             }

@@ -1,56 +1,66 @@
 ﻿using System;
-using CreationalPatterns.AbstractFactory.BaseFactory;
+using CreationalPatterns.AbstractFactory.Factory;
 
-// Create a hierarchical link collection as an HTML file.
+/*
+Create a hierarchical link collection as an HTML file. It can be created in either tabular or list format.
+ */
 
 namespace CreationalPatterns.AbstractFactory
 {
     class Program
     {
-        static void Main(string[] args)
+        static void Main()
         {
-            if (args.Length != 1)
+            Console.WriteLine("Please enter a number (1 or 2):");
+            Console.WriteLine("  1: Create objects by using ListFactory");
+            Console.WriteLine("  2: Create objects by using TableFactory");
+            int number = 0;
+            try
             {
-                Console.WriteLine("Usage: dotnet AbstractFactory.dll class.name.of.ConcreteFactory");
-                Console.WriteLine("Ex.1 : dotnet AbstractFactory.dll CreationalPatterns.AbstractFactory.ListFactory.ListFactory");
-                Console.WriteLine("Ex.2 : dotnet AbstractFactory.dll CreationalPatterns.AbstractFactory.TableFactory.TableFactory");
+                number = int.Parse(Console.ReadLine());
+            }
+            catch
+            {
+                Console.Error.WriteLine("Unexpected value.");
+                Environment.Exit(1);
+            }
+
+            Factory.Factory factory = null;
+            if (number == 1)
+            {
+                factory = new ListFactory.ListFactory();
+            }
+            else if (number == 2)
+            {
+                factory = new TableFactory.TableFactory();
             }
             else
             {
-                var factory = Factory.GetFactory(args[0]);
-
-                var washingtonPost = factory.CreateLink("The Washington Post", "https://www.washingtonpost.com/");
-                var newYorkTimes = factory.CreateLink("The NewYork Times", "https://www.nytimes.com/");
-                var financialTimes = factory.CreateLink("The Financial Times", "https://www.ft.com/");
-                var yahoo = factory.CreateLink("Yahoo!", "https://www.yahoo.com/");
-                var google = factory.CreateLink("Google", "https://www.google.com/");
-                var mlb = factory.CreateLink("MLB", "https://www.mlb.com/");
-                var fifa = factory.CreateLink("FIFA", "https://www.fifa.com/");
-                var wba = factory.CreateLink("WBA", "http://www.wbaboxing.com/");
-                var wbc = factory.CreateLink("WBC", "http://www.wbcboxing.com/");
-
-                var newspaper = factory.CreateData("Newspaper");
-                newspaper.Add(washingtonPost);
-                newspaper.Add(newYorkTimes);
-                newspaper.Add(financialTimes);
-
-                var searchEngine = factory.CreateData("Search engine");
-                searchEngine.Add(yahoo);
-                searchEngine.Add(google);
-
-                var sports = factory.CreateData("Sports");
-                sports.Add(mlb);
-                sports.Add(fifa);
-                sports.Add(wba);
-                sports.Add(wbc);
-
-                var linkPage = factory.CreatePage("LinkPage", "James Smith");
-                linkPage.Add(newspaper);
-                linkPage.Add(searchEngine);
-                linkPage.Add(sports);
-
-                linkPage.Output();
+                Console.Error.WriteLine("The value is not 1 or 2.");
+                Environment.Exit(1);
             }
+
+            Link washingtonPost = factory.CreateLink("The Washington Post", "https://www.washingtonpost.com/");
+            Link newYorkTimes = factory.CreateLink("The NewYork Times", "https://www.nytimes.com/");
+            Link financialTimes = factory.CreateLink("The Financial Times", "https://www.ft.com/");
+
+            Data newspaper = factory.CreateData("Newspaper");
+            newspaper.Add(washingtonPost);
+            newspaper.Add(newYorkTimes);
+            newspaper.Add(financialTimes);
+
+            Link yahoo = factory.CreateLink("Yahoo!", "https://www.yahoo.com/");
+            Link google = factory.CreateLink("Google", "https://www.google.com/");
+
+            Data searchEngine = factory.CreateData("Search engine");
+            searchEngine.Add(yahoo);
+            searchEngine.Add(google);
+
+            Page linkPage = factory.CreatePage("LinkPage", "James Smith");
+            linkPage.Add(newspaper);
+            linkPage.Add(searchEngine);
+
+            linkPage.Output();
         }
     }
 }

@@ -7,7 +7,7 @@ using System.Text;
 
 namespace BehavioralPatterns.Strategy
 {
-    public class Hand
+    public class HandSignal
     {
         // ˅
         
@@ -23,7 +23,10 @@ namespace BehavioralPatterns.Strategy
         public static readonly int PAPER = 2;
 
         // Hands of rock-scissors-paper
-        private static readonly Hand[] hands = { new Hand(ROCK), new Hand(SCISSORS), new Hand(PAPER) };
+        private static readonly HandSignal[] handSignals = { new HandSignal(ROCK), new HandSignal(SCISSORS), new HandSignal(PAPER) };
+
+        // Characters of the hands
+        private static readonly string[] name = { "Rock", "Scissors", "Paper" };
 
         // Values of rock, scissors and paper.
         public int Value
@@ -33,29 +36,26 @@ namespace BehavioralPatterns.Strategy
             // ˄
         }
 
-        // Characters of the hands
-        private static readonly string[] name = { "Rock", "Scissors", "Paper" };
-
         // Get an instance of the hand
-        public static Hand GetHand(int handValue)
+        public static HandSignal GetHand(int handValue)
         {
             // ˅
-            return hands[handValue];
+            return handSignals[handValue];
             // ˄
         }
 
-        public Hand(int value)
+        public HandSignal(int value)
             // ˅
             
             // ˄
         {
             // ˅
-            this.Value = value;
+            Value = value;
             // ˄
         }
 
         // Return true if "this" is stronger than "hand".
-        public bool IsStrongerThan(Hand hand)
+        public bool IsStrongerThan(HandSignal hand)
         {
             // ˅
             return JudgeGame(hand) == 1;
@@ -63,7 +63,7 @@ namespace BehavioralPatterns.Strategy
         }
 
         // Return false if "this" is weaker than "hand".
-        public bool IsWeakerThan(Hand hand)
+        public bool IsWeakerThan(HandSignal hand)
         {
             // ˅
             return JudgeGame(hand) == -1;
@@ -78,7 +78,7 @@ namespace BehavioralPatterns.Strategy
         }
 
         // The draw is 0. "this" win is 1. "hand" win is -1.
-        private int JudgeGame(Hand hand)
+        private int JudgeGame(HandSignal hand)
         {
             // ˅
             if (this == hand)

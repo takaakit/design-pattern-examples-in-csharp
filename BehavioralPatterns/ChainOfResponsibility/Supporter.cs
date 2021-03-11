@@ -36,7 +36,7 @@ namespace BehavioralPatterns.ChainOfResponsibility
         public void Support(Trouble trouble)
         {
             // ˅
-            if (Handle(trouble))
+            if (CanHandle(trouble))
             {
                 Supported(trouble);
             }
@@ -67,13 +67,13 @@ namespace BehavioralPatterns.ChainOfResponsibility
             // ˄
         }
 
-        protected abstract bool Handle(Trouble trouble);
+        protected abstract bool CanHandle(Trouble trouble);
 
         // Trouble was supported.
         private void Supported(Trouble trouble)
         {
             // ˅
-            Console.WriteLine($"{trouble.ToString()} was handled by {this}.");
+            Console.WriteLine($"{trouble} was handled by {this}.");
             // ˄
         }
 
@@ -81,7 +81,7 @@ namespace BehavioralPatterns.ChainOfResponsibility
         private void Unsupported(Trouble trouble)
         {
             // ˅
-            Console.WriteLine($"{trouble.ToString()} was not handled.");
+            Console.WriteLine($"{trouble} was not handled.");
             // ˄
         }
 

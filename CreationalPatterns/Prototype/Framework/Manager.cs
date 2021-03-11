@@ -13,7 +13,7 @@ namespace CreationalPatterns.Prototype.Framework
         
         // ˄
 
-        private Dictionary<string, IDisplay> display;
+        private readonly Dictionary<string, IDisplay> display;
 
         public Manager()
             // ˅
@@ -21,7 +21,7 @@ namespace CreationalPatterns.Prototype.Framework
             // ˄
         {
             // ˅
-            this.display = new Dictionary<string, IDisplay>();
+            display = new Dictionary<string, IDisplay>();
             
             // ˄
         }

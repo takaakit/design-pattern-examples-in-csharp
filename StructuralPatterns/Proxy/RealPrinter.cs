@@ -21,7 +21,7 @@ namespace StructuralPatterns.Proxy
             // ˄
         {
             // ˅
-            this.printerName = name;
+            printerName = name;
             HeavyTask($"Creating an instance({name}) of the Printer");
             // ˄
         }
@@ -30,8 +30,10 @@ namespace StructuralPatterns.Proxy
         public void Output(string content)
         {
             // ˅
-            Console.WriteLine($"=== {printerName} ===");
+            Console.WriteLine("==========");
             Console.WriteLine(content);
+            Console.WriteLine($"Printed by {printerName}");
+            Console.WriteLine("==========");
             // ˄
         }
 
@@ -40,7 +42,7 @@ namespace StructuralPatterns.Proxy
         {
             // ˅
             Console.Write(message);
-            for (var i = 0; i < 10; i++)
+            for (int i = 0; i < 10; i++)
             {
                 System.Threading.Thread.Sleep(500);
                 Console.Write(".");

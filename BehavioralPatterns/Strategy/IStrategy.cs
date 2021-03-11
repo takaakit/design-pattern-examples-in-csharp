@@ -10,9 +10,11 @@ namespace BehavioralPatterns.Strategy
     public interface IStrategy
     {
 
-        Hand NextHand();
+        // Show a hand signal.
+        HandSignal ShowHandSignal();
 
-        void Learn(bool win);
+        // Notify a game result.
+        void NotifyGameResult(GameResultType result, HandSignal ownHand, HandSignal opponentsHand);
 
         // ˅
         

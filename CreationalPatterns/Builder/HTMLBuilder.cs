@@ -15,7 +15,7 @@ namespace CreationalPatterns.Builder
         // ˄
 
         // File name to create
-        public string Result
+        public string FileName
         {
             // ˅
             get; private set;
@@ -39,8 +39,8 @@ namespace CreationalPatterns.Builder
         public void CreateTitle(string title)
         {
             // ˅
-            Result = $"{title}.html";           // Set a title as a file name
-            writer = new StreamWriter(Result);
+            FileName = $"{title}.html";           // Set a title as a file name
+            writer = new StreamWriter(FileName);
             writer.WriteLine($"<html><head><title>{title}</title></head><body>");   // Write a title
             writer.WriteLine($"<h1>{title}</h1>");
             // ˄

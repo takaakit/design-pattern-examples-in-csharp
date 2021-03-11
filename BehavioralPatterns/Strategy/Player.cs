@@ -38,39 +38,34 @@ namespace BehavioralPatterns.Strategy
             // ˄
         }
 
-        // Calculate a hand from the strategy.
-        public Hand NextHand()
+        // Show a hand signal from the strategy.
+        public HandSignal ShowHandSignal()
         {
             // ˅
-            return strategy.NextHand();
+            return strategy.ShowHandSignal();
             // ˄
         }
 
-        // Won a game.
-        public void Won()
+        // Notify a game result.
+        public void NotifyGameResult(GameResultType result, HandSignal ownHand, HandSignal opponentsHand)
         {
             // ˅
-            strategy.Learn(true);
-            winCount++;
-            gameCount++;
-            // ˄
-        }
+            switch (result)
+            {
+                case GameResultType.Win:
+                    winCount++;
+                    gameCount++;
+                    break;
+                case GameResultType.Loss:
+                    lossCount++;
+                    gameCount++;
+                    break;
+                case GameResultType.Draw:
+                    gameCount++;
+                    break;
+            }
 
-        // Lost a game.
-        public void Lost()
-        {
-            // ˅
-            strategy.Learn(false);
-            lossCount++;
-            gameCount++;
-            // ˄
-        }
-
-        // Drew a game.
-        public void Drew()
-        {
-            // ˅
-            gameCount++;
+            strategy.NotifyGameResult(result, ownHand, opponentsHand);
             // ˄
         }
 

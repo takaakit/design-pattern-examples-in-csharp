@@ -1,19 +1,24 @@
 ﻿using System;
 
-// At the time of printing, create an instance of the printer for the first time.
-// In order to spend time creating a printer, call a heavy task when creating a printer instance.
+/*
+Print on a named printer. Setting and changing the printer name is done by Proxy (PrinterProxy).
+At the time of printing, create an instance of the RealSubject (RealPrinter) for the first time.
+ */
 
 namespace StructuralPatterns.Proxy
 {
     class Program
     {
-        static void Main(string[] args)
+        static void Main()
         {
-            var p = new PrinterProxy("Emily's printer");
-            Console.WriteLine($"The current printer is {p.PrinterName}.");
-            p.PrinterName = "William's printer";
-            Console.WriteLine($"The current printer is {p.PrinterName}.");
+            PrinterProxy p = new PrinterProxy("PRINTER-A");
+            Console.WriteLine($"The printer name is {p.PrinterName}.");
+            p.PrinterName = "PRINTER-B";
+            Console.WriteLine($"The printer name is {p.PrinterName}.");
+
+            Console.WriteLine("Print start.");
             p.Output("Nice to meet you.");
+            Console.WriteLine("Print exit.");
         }
     }
 }

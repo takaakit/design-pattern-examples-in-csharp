@@ -5,7 +5,7 @@ using System.Text;
 
 // ˄
 
-namespace CreationalPatterns.AbstractFactory.BaseFactory
+namespace CreationalPatterns.AbstractFactory.Factory
 {
     public abstract class Data : Item
     {
@@ -21,7 +21,7 @@ namespace CreationalPatterns.AbstractFactory.BaseFactory
             // ˄
         {
             // ˅
-            this.items = new List<Item>();
+            items = new List<Item>();
             
             // ˄
         }

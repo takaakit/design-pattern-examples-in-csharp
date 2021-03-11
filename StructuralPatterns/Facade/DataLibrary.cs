@@ -34,17 +34,16 @@ namespace StructuralPatterns.Facade
         }
 
         // Read a data library file.
-        public Dictionary<string, string> GetData(string dataLibraryName)
+        public Dictionary<string, string> GetData(string dataLibraryFileName)
         {
             // ˅
-            var fileName = $"{dataLibraryName}.txt";
-            using (var file = new StreamReader(fileName, System.Text.Encoding.UTF8))
+            using (StreamReader file = new StreamReader(dataLibraryFileName, System.Text.Encoding.UTF8))
             {
-                var data = new Dictionary<string, string>();
-                var line = "";
+                Dictionary<string, string> data = new Dictionary<string, string>();
+                string line = "";
                 while ((line = file.ReadLine()) != null)
                 {
-                    var keyAndValue = line.Split("=");
+                    string[] keyAndValue = line.Split("=");
                     if (keyAndValue.Length == 2)
                     {
                         data.Add(keyAndValue[0], keyAndValue[1]);
