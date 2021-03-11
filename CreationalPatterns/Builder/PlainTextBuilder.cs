@@ -16,10 +16,12 @@ namespace CreationalPatterns.Builder
         // String to output
         public string Content
         {
+            // ˅
             get
             {
                 return builder.ToString();
             }
+            // ˄
         }
 
         private readonly StringBuilder builder;

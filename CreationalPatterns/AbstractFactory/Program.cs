@@ -25,7 +25,7 @@ namespace CreationalPatterns.AbstractFactory
                 Environment.Exit(1);
             }
 
-            Factory.Factory factory = null;
+            BaseFactory factory = null;
             if (number == 1)
             {
                 factory = new ListFactory.ListFactory();

@@ -16,7 +16,9 @@ namespace BehavioralPatterns.Memento
         // Money
         public int Money
         {
+            // ˅
             get; private set;
+            // ˄
         }
 
         public Memento(int money)

@@ -6,7 +6,7 @@ using CreationalPatterns.FactoryMethod.Framework;
 
 // ˄
 
-namespace CreationalPatterns.FactoryMethod.IdCard
+namespace CreationalPatterns.FactoryMethod.CreditCard
 {
     public class CreditCard : IProduct
     {

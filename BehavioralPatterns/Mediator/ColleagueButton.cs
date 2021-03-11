@@ -44,7 +44,9 @@ namespace BehavioralPatterns.Mediator
 
         public bool IsPressed()
         {
+            // ˅
             return checkBox.Checked;
+            // ˄
         }
 
         private void Button_Click(object sender, EventArgs e)

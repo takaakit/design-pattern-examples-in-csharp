@@ -14,8 +14,11 @@ namespace BehavioralPatterns.Observer
 
         // ˄
 
-        public override int Value {
+        public override int Value
+        {
+            // ˅
             get; protected set;
+            // ˄
         }
 
         private readonly Random random;

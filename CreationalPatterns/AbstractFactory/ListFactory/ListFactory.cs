@@ -8,7 +8,7 @@ using CreationalPatterns.AbstractFactory.Factory;
 
 namespace CreationalPatterns.AbstractFactory.ListFactory
 {
-    public class ListFactory : Factory.Factory
+    public class ListFactory : BaseFactory
     {
         // ˅
         

@@ -7,7 +7,7 @@ using System.Text;
 
 namespace CreationalPatterns.AbstractFactory.Factory
 {
-    public abstract class Factory
+    public abstract class BaseFactory
     {
         // ˅
         

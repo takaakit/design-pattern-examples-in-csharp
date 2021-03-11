@@ -17,8 +17,13 @@ namespace BehavioralPatterns.Interpreter
         private string name;
 
         public Action()
+            // ˅
+            
+            // ˄
         {
+            // ˅
             this.name = null;
+            // ˄
         }
 
         public void Parse(Context context)

@@ -44,7 +44,9 @@ namespace BehavioralPatterns.Mediator
 
         public bool IsEmpty()
         {
+            // ˅
             return textBox.Text.Length == 0;
+            // ˄
         }
 
         private void TextBox_TextChanged(object sender, EventArgs e)

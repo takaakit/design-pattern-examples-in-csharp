@@ -38,25 +38,31 @@ namespace BehavioralPatterns.Command
 
         private void buttonUndo_Click(object sender, EventArgs e)
         {
+            // ˅
             paintingCanvas.Clear();
             history.Undo();
             history.Execute();
+            // ˄
         }
 
         private void buttonClear_Click(object sender, EventArgs e)
         {
+            // ˅
             paintingCanvas.Clear();
             history.Clear();
+            // ˄
         }
 
         private void pictureBox_MouseMove(object sender, MouseEventArgs e)
         {
+            // ˅
             if (e.Button == MouseButtons.Left)
             {
                 PaintingCommand paintingCommand = new PaintingCommand(paintingCanvas, e.X, e.Y);
                 history.Add(paintingCommand);
                 paintingCommand.Execute();
             }
+            // ˄
         }
 
         // ˅
