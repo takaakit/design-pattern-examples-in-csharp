@@ -1,5 +1,5 @@
 ﻿using CreationalPatterns.FactoryMethod.Framework;
-using CreationalPatterns.FactoryMethod.IdCard;
+using CreationalPatterns.FactoryMethod.CreditCard;
 
 /*
 The subject is a factory to make credit cards. The Factory defines how to create an credit card,
