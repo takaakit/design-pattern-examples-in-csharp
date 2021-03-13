@@ -7,7 +7,7 @@ namespace BehavioralPatterns.Observer
 {
     class Program
     {
-        static void Main(string[] args)
+        static void Main()
         {
             Number number = new RandomNumber();
             number.AddObserver(new DigitObserver());

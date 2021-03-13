@@ -56,7 +56,7 @@ namespace BehavioralPatterns.Command
             // ˄
         }
 
-        // Delete all past commands.
+        // Delete all past commands
         public void Clear()
         {
             // ˅

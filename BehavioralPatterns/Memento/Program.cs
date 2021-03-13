@@ -14,8 +14,8 @@ namespace BehavioralPatterns.Memento
     {
         static void Main()
         {
-            Gamer gamer = new Gamer(100);               // The initial money is 100
-            Memento memento = gamer.CreateMemento();    // Save the initial state
+            Gamer gamer = new Gamer(100);                   // The initial money is 100
+            Memento memento = gamer.CreateMemento();        // Save the initial state
 
             for (var i = 0; i < 10; i++)
             {

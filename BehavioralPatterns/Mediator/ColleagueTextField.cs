@@ -30,7 +30,7 @@ namespace BehavioralPatterns.Mediator
         {
             // ˅
             this.textBox = textBox;
-            textBox.TextChanged += new EventHandler(this.TextBox_TextChanged);
+            textBox.TextChanged += new EventHandler(TextBox_TextChanged);
             // ˄
         }
 

@@ -27,16 +27,16 @@ namespace BehavioralPatterns.Command
             // ˅
             InitializeComponent();
 
-            this.pictureBox.MouseMove += new System.Windows.Forms.MouseEventHandler(this.pictureBox_MouseMove);
-            this.buttonUndo.Click += new System.EventHandler(this.buttonUndo_Click);
-            this.buttonClear.Click += new System.EventHandler(this.buttonClear_Click);
+            this.pictureBox.MouseMove += new System.Windows.Forms.MouseEventHandler(this.PictureBox_MouseMove);
+            this.buttonUndo.Click += new System.EventHandler(this.ButtonUndo_Click);
+            this.buttonClear.Click += new System.EventHandler(this.ButtonClear_Click);
 
             this.history = new HistoryCommand();
             this.paintingCanvas = new PaintingCanvas(this.pictureBox);
             // ˄
         }
 
-        private void buttonUndo_Click(object sender, EventArgs e)
+        private void ButtonUndo_Click(object sender, EventArgs e)
         {
             // ˅
             paintingCanvas.Clear();
@@ -45,7 +45,7 @@ namespace BehavioralPatterns.Command
             // ˄
         }
 
-        private void buttonClear_Click(object sender, EventArgs e)
+        private void ButtonClear_Click(object sender, EventArgs e)
         {
             // ˅
             paintingCanvas.Clear();
@@ -53,7 +53,7 @@ namespace BehavioralPatterns.Command
             // ˄
         }
 
-        private void pictureBox_MouseMove(object sender, MouseEventArgs e)
+        private void PictureBox_MouseMove(object sender, MouseEventArgs e)
         {
             // ˅
             if (e.Button == MouseButtons.Left)

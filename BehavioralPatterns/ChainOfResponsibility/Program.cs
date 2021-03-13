@@ -11,7 +11,7 @@ namespace BehavioralPatterns.ChainOfResponsibility
 {
     class Program
     {
-        static void Main(string[] args)
+        static void Main()
         {
             Supporter emily = new LazySupporter("Emily");
             Supporter william = new MoodySupporter("William");

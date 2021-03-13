@@ -14,7 +14,7 @@ namespace StructuralPatterns.Facade
         
         // ˄
 
-        private static DataLibrary instance = new DataLibrary();
+        private static readonly DataLibrary instance = new DataLibrary();
 
         private DataLibrary()
             // ˅
@@ -40,7 +40,7 @@ namespace StructuralPatterns.Facade
             using (StreamReader file = new StreamReader(dataLibraryFileName, System.Text.Encoding.UTF8))
             {
                 Dictionary<string, string> data = new Dictionary<string, string>();
-                string line = "";
+                string line;
                 while ((line = file.ReadLine()) != null)
                 {
                     string[] keyAndValue = line.Split("=");

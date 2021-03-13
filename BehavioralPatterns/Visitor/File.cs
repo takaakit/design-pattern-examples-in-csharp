@@ -21,6 +21,7 @@ namespace BehavioralPatterns.Visitor
             // ˄
         }
 
+        // File size
         public override int Size
         {
             // ˅

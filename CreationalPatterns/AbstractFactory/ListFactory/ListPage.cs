@@ -27,7 +27,7 @@ namespace CreationalPatterns.AbstractFactory.ListFactory
         public override string ToHTML()
         {
             // ˅
-            var builder = new StringBuilder();
+            StringBuilder builder = new StringBuilder();
             builder.Append($"<html><head><title>{title}</title></head>\n");
             builder.Append($"<body><h1>{title}</h1>\n");
             builder.Append("<ul>\n");

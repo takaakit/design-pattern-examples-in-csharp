@@ -41,7 +41,7 @@ namespace BehavioralPatterns.Visitor
             // ˅
             Console.WriteLine($"{currentDirectory}/{directory}");
             string visitedDirectory = currentDirectory;
-            currentDirectory = currentDirectory + "/" + directory.Name;
+            currentDirectory = $"{currentDirectory}/{directory.Name}";
             foreach (IElement element in directory.Elements)
             {
                 element.Accept(this);

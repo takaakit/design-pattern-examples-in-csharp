@@ -30,7 +30,7 @@ namespace BehavioralPatterns.Mediator
         {
             // ˅
             this.checkBox = checkBox;
-            checkBox.Click += new EventHandler(this.Button_Click);
+            checkBox.Click += new EventHandler(Button_Click);
             // ˄
         }
 

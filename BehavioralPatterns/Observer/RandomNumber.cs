@@ -38,7 +38,7 @@ namespace BehavioralPatterns.Observer
         public override void Generate()
         {
             // ˅
-            for (var i = 0; i < 20; i++)
+            for (int i = 0; i < 20; i++)
             {
                 Value = random.Next(50);
                 NotifyObservers();

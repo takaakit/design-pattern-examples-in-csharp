@@ -9,7 +9,7 @@ namespace StructuralPatterns.Composite
 {
     class Program
     {
-        static void Main(string[] args)
+        static void Main()
         {
             Console.WriteLine("Create a file system...");
 

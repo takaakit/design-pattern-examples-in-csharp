@@ -15,7 +15,7 @@ namespace BehavioralPatterns.Command
         
         // ˄
 
-        private readonly Brush COLOR;
+        private readonly Brush PAINTING_COLOR;
 
         // Radius of the painting point
         private readonly int POINT_RADIUS;
@@ -28,7 +28,7 @@ namespace BehavioralPatterns.Command
             // ˄
         {
             // ˅
-            this.COLOR = Brushes.LightGreen;
+            this.PAINTING_COLOR = Brushes.LightGreen;
             this.POINT_RADIUS = 20;
             this.pictureBox = pictureBox;
             pictureBox.Image = new Bitmap(pictureBox.Width, pictureBox.Height);
@@ -40,7 +40,7 @@ namespace BehavioralPatterns.Command
             // ˅
             var bm = new Bitmap(pictureBox.Image);
             var g = Graphics.FromImage(bm);
-            g.FillEllipse(COLOR, new Rectangle(
+            g.FillEllipse(PAINTING_COLOR, new Rectangle(
                 (int)(paintingPosX - (POINT_RADIUS * 0.5)),
                 (int)(paintingPosY - (POINT_RADIUS * 0.5)),
                 POINT_RADIUS,

@@ -22,7 +22,7 @@ namespace BehavioralPatterns.Command
 
         protected IPaintingTarget paintingTarget;
 
-        public PaintingCommand(IPaintingTarget paintingObject, double paintingPosX, double paintingPosY)
+        public PaintingCommand(IPaintingTarget paintingTarget, double paintingPosX, double paintingPosY)
             // ˅
             
             // ˄
@@ -30,7 +30,7 @@ namespace BehavioralPatterns.Command
             // ˅
             this.paintingPosX = paintingPosX;
             this.paintingPosY = paintingPosY;
-            this.paintingTarget = paintingObject;
+            this.paintingTarget = paintingTarget;
             
             // ˄
         }

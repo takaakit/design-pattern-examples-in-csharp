@@ -36,7 +36,6 @@ namespace BehavioralPatterns.Memento
             // ˄
         }
 
-        // Get current status
         public Memento CreateMemento()
         {
             // ˅
@@ -44,7 +43,6 @@ namespace BehavioralPatterns.Memento
             // ˄
         }
 
-        // Undo status
         public void SetMemento(Memento memento)
         {
             // ˅
@@ -76,7 +74,8 @@ namespace BehavioralPatterns.Memento
                     Money *= 2;
                     Console.WriteLine($"Gamer's money doubles: {preMoney} -> {Money}");
                     break;
-                default: // Other...Nothing happens
+                default:
+                    // Other...Exit
                     Console.Error.WriteLine("Unexpected value.");
                     Environment.Exit(1);
                     break;

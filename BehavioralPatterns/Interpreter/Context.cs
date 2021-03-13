@@ -7,7 +7,7 @@ using System.Text;
 
 namespace BehavioralPatterns.Interpreter
 {
-    // Analyze the syntax
+    // Hold data which will be interpreted.
     public class Context
     {
         // ˅

@@ -11,15 +11,10 @@ namespace CreationalPatterns.FactoryMethod.CreditCard
     public class CreditCard : IProduct
     {
         // ˅
-        
+
         // ˄
 
-        public string Owner
-        {
-            // ˅
-            get; private set;
-            // ˄
-        }
+        private readonly string owner;
 
         public CreditCard(string owner)
             // ˅
@@ -27,15 +22,15 @@ namespace CreationalPatterns.FactoryMethod.CreditCard
             // ˄
         {
             // ˅
-            Owner = owner;
-            Console.WriteLine($"Make {Owner}'s card.");
+            this.owner = owner;
+            Console.WriteLine($"Make {this.owner}'s card.");
             // ˄
         }
 
         public void Use()
         {
             // ˅
-            Console.WriteLine($"Use {Owner}'s card.");
+            Console.WriteLine($"Use {this.owner}'s card.");
             // ˄
         }
 

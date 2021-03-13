@@ -32,14 +32,16 @@ namespace BehavioralPatterns.Mediator
             // ˄
         {
             // ˅
-            this.radioLogin = null;
-            this.radioGuest = null;
-            this.textUsername = null;
-            this.textPassword = null;
-            this.buttonOk = null;
-            this.buttonCancel = null;
             InitializeComponent();
             CreateColleagues();
+
+            // Set mediators
+            radioGuest.Mediator = this;
+            radioLogin.Mediator = this;
+            textUsername.Mediator = this;
+            textPassword.Mediator = this;
+            buttonOk.Mediator = this;
+            buttonCancel.Mediator = this;
             // ˄
         }
 
@@ -52,14 +54,6 @@ namespace BehavioralPatterns.Mediator
             textPassword = new ColleagueTextField(this.formsTextPassword);
             buttonOk = new ColleagueButton(this.formsCheckOk);
             buttonCancel = new ColleagueButton(this.formsCheckCancel);
-
-            // Set mediators
-            radioGuest.Mediator = this;
-            radioLogin.Mediator = this;
-            textUsername.Mediator = this;
-            textPassword.Mediator = this;
-            buttonOk.Mediator = this;
-            buttonCancel.Mediator = this;
             // ˄
         }
 

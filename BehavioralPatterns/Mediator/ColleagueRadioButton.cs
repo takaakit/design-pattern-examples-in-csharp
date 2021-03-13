@@ -30,7 +30,7 @@ namespace BehavioralPatterns.Mediator
         {
             // ˅
             this.radioButton = radioButton;
-            radioButton.CheckedChanged += new EventHandler(this.RadioButton_CheckedChanged);
+            radioButton.CheckedChanged += new EventHandler(RadioButton_CheckedChanged);
             // ˄
         }
 

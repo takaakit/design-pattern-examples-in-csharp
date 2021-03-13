@@ -18,7 +18,7 @@ namespace BehavioralPatterns.Observer
         {
             // ˅
             Console.Write("Bar chart: ");
-            for (var i = 0; i < number.Value; i++)
+            for (int i = 0; i < number.Value; i++)
             {
                 Console.Write("*");
             }

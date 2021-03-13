@@ -21,6 +21,7 @@ namespace BehavioralPatterns.Visitor
             // ˄
         }
 
+        // Directory size
         public override int Size
         {
             // ˅

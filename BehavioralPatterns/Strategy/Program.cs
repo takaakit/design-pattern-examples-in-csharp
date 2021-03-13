@@ -10,7 +10,7 @@ namespace BehavioralPatterns.Strategy
 {
     class Program
     {
-        static void Main(string[] args)
+        static void Main()
         {
             Player player1 = new Player("Emily", new RandomStrategy());
             Player player2 = new Player("James", new MirrorStrategy());

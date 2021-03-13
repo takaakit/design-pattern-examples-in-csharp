@@ -8,7 +8,7 @@ namespace BehavioralPatterns.Iterator
 {
     class Program
     {
-        static void Main(string[] args)
+        static void Main()
         {
             BookShelf bookShelf = new BookShelf(5);
             bookShelf.Add(new Book("Design Patterns: Elements of Reusable Object-Oriented Software"));

@@ -13,7 +13,7 @@ namespace CreationalPatterns.Prototype
     {
         static void Main()
         {
-            var manager = new Manager();
+            Manager manager = new Manager();
 
             // Register instances of the "Display" subclass
             IDisplay emphasisUnderline = new UnderlineDisplay('~');

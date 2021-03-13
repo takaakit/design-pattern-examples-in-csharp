@@ -41,7 +41,7 @@ namespace BehavioralPatterns.Interpreter
         {
             using (System.IO.StreamReader file = new System.IO.StreamReader(System.IO.Path.GetDirectoryName(System.Environment.CommandLine) + "/../../../program.txt", System.Text.Encoding.UTF8))
             {
-                var text = "";
+                string text;
                 while ((text = file.ReadLine()) != null)
                 {
                     Console.WriteLine($"Before parsing : {text}");

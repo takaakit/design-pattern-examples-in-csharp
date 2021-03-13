@@ -10,6 +10,7 @@ using System.Threading;
 
 namespace BehavioralPatterns.State
 {
+    // Safe security system that the security status changes with time.
     public partial class AppSafe : Form, IContext
     {
         // ˅
@@ -25,8 +26,8 @@ namespace BehavioralPatterns.State
             // ˄
         {
             // ˅
-            this.state = DaytimeState.GetInstance();
             InitializeComponent();
+            state = DaytimeState.GetInstance();
 
             Task.Run(() => {
                 while (true)
@@ -39,10 +40,10 @@ namespace BehavioralPatterns.State
                 }
             });
 
-            this.buttonUse.Click += new System.EventHandler(this.ButtonUse_Click);
-            this.buttonAlarm.Click += new System.EventHandler(this.ButtonAlarm_Click);
-            this.buttonPhone.Click += new System.EventHandler(this.ButtonPhone_Click);
-            this.buttonExit.Click += new System.EventHandler(this.ButtonExit_Click);
+            buttonUse.Click += new System.EventHandler(ButtonUse_Click);
+            buttonAlarm.Click += new System.EventHandler(ButtonAlarm_Click);
+            buttonPhone.Click += new System.EventHandler(ButtonPhone_Click);
+            buttonExit.Click += new System.EventHandler(ButtonExit_Click);
             // ˄
         }
 
@@ -50,17 +51,22 @@ namespace BehavioralPatterns.State
         public void SetTime(int hour)
         {
             // ˅
-            string clockTime;
+            string clockTime = "Current Time : ";
             if (hour < 10)
             {
-                clockTime = $"0{hour}:00";
+                clockTime += $"0{hour}:00";
             }
             else
             {
-                clockTime = $"{hour}:00";
+                clockTime += $"{hour}:00";
             }
+
             Console.WriteLine(clockTime);
-            textTime.Text = clockTime;
+            if (textTime != null)
+            {
+                textTime.Text = clockTime;
+            }
+            
             state.SetTime(this, hour);
             // ˄
         }
@@ -93,21 +99,21 @@ namespace BehavioralPatterns.State
         private void ButtonUse_Click(object sender, EventArgs e)
         {
             // ˅
-            state.UseSafe(this);        // Safe use button pressed
+            state.UseSafe(this);        // Use button pressed
             // ˄
         }
 
         private void ButtonAlarm_Click(object sender, EventArgs e)
         {
             // ˅
-            state.SoundBell(this);      // Emergency bell button pressed
+            state.SoundBell(this);      // Alarm button pressed
             // ˄
         }
 
         private void ButtonPhone_Click(object sender, EventArgs e)
         {
             // ˅
-            state.Call(this);           // Normal call button pressed
+            state.Call(this);           // Phone button pressed
             // ˄
         }
 
