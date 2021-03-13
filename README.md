@@ -13,7 +13,7 @@ This project is available for the following objectives:
 
 > UML model example:
 
-![](screenshots/CompositePattern.png "Composite Pattern")
+![](screenshots/CompositePattern.svg "Composite Pattern")
 
 > C# file example:
 ---
@@ -30,22 +30,22 @@ namespace StructuralPatterns.Composite
     public class File : FileSystemElement
     {
         // ˅
-        
+
         // ˄
 
-        protected override string Name
+        public override string Name
         {
             // ˅
-            get; set;
+            get;
             // ˄
         }
 
-        protected override int Size
+        public override int Size
         {
             // ˅
-            get; set;
+            get;
             // ˄
-        } = 0;
+        }
 
         public File(string name, int size)
             // ˅
@@ -53,8 +53,8 @@ namespace StructuralPatterns.Composite
             // ˄
         {
             // ˅
-            this.Name = name;
-            this.Size = size;
+            Name = name;
+            Size = size;
             // ˄
         }
 
@@ -84,16 +84,17 @@ Installation
 
 **M PLUS plug-in**
 * Download the plug-in from [M PLUS plug-in site](https://sites.google.com/view/m-plus-plugin/download), and install.  
-  **Use ver.2.4.0 or higher.**
+  Use **ver.2.4.0** or higher.
 
 **Visual Studio IDE**
-* Download [Visual Studio IDE](https://visualstudio.microsoft.com/vs/), and install.  
+* .NET Core 3.1 is required, so download and install [Visual Studio 2019](https://visualstudio.microsoft.com/vs/) version **16.4** or higher.  
+  Tested and confirmed to work on Windows 10.
 
 Usage
 -----
 * Select model elements on the model browser of Astah, and press the "Generate code" button to generate.  
 * The generated code has "User Code Area". The "User Code Area" is the area enclosed by "˅" and "˄". Handwritten code written in the "User Code Area" remains after a re-generation.
-* You can run the program from "main.cpp" for each Design Pattern.
+* Set up a startup project in Visual Studio, build and run it.
 * For detailed usage of the tools, please see [Astah Manual](http://astah.net/manual) and [M PLUS plug-in Tips](https://sites.google.com/view/m-plus-plugin/tips).
 
 ![](screenshots/Usage.gif "Usage")
