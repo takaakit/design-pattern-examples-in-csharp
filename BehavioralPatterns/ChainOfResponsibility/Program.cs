@@ -22,7 +22,7 @@ namespace BehavioralPatterns.ChainOfResponsibility
             emily.SetNext(william).SetNext(amelia).SetNext(joseph);
 
             // Various troubles occurred.
-            for (var i = 0; i < 10; i++)
+            for (int i = 0; i < 10; i++)
             {
                 emily.Support(new Trouble(i));
             }

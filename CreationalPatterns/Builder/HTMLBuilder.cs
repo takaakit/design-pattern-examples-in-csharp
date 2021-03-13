@@ -59,9 +59,9 @@ namespace CreationalPatterns.Builder
         {
             // ˅
             writer.WriteLine("<ul>");       // Write items
-            for (var i = 0; i < items.Count; i++)
+            foreach (string item in items)
             {
-                writer.WriteLine($"<li>{items[i]}</li>");
+                writer.WriteLine($"<li>{item}</li>");
             }
             writer.WriteLine("</ul>");
             // ˄

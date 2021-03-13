@@ -27,6 +27,7 @@ namespace BehavioralPatterns.State
         {
             // ˅
             InitializeComponent();
+
             state = DaytimeState.GetInstance();
 
             Task.Run(() => {
@@ -75,7 +76,7 @@ namespace BehavioralPatterns.State
         public void ChangeState(IState state)
         {
             // ˅
-            Console.WriteLine($"The state changed from {this.state.ToString()} to {state}.");
+            Console.WriteLine($"The state changed from {this.state} to {state}.");
             this.state = state;
             // ˄
         }

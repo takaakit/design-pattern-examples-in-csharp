@@ -33,6 +33,7 @@ namespace BehavioralPatterns.Mediator
         {
             // ˅
             InitializeComponent();
+
             CreateColleagues();
 
             // Set mediators

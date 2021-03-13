@@ -7,7 +7,7 @@ using System.Text;
 
 namespace BehavioralPatterns.Observer
 {
-    // Display values with a bar chart.
+    // Display values as a bar chart.
     public class BarChartObserver : IObserver
     {
         // ˅
