@@ -15,6 +15,13 @@ namespace CreationalPatterns.Singleton
 
         private static readonly Singleton instance = new Singleton();
 
+        public static Singleton GetInstance()
+        {
+            // ˅
+            return instance;
+            // ˄
+        }
+
         private Singleton()
             // ˅
             
@@ -22,13 +29,6 @@ namespace CreationalPatterns.Singleton
         {
             // ˅
             
-            // ˄
-        }
-
-        public static Singleton GetInstance()
-        {
-            // ˅
-            return instance;
             // ˄
         }
 

@@ -15,6 +15,13 @@ namespace BehavioralPatterns.State
 
         private static readonly NightState instance = new NightState();
 
+        public static NightState GetInstance()
+        {
+            // ˅
+            return instance;
+            // ˄
+        }
+
         private NightState()
             // ˅
             
@@ -22,13 +29,6 @@ namespace BehavioralPatterns.State
         {
             // ˅
             
-            // ˄
-        }
-
-        public static NightState GetInstance()
-        {
-            // ˅
-            return instance;
             // ˄
         }
 

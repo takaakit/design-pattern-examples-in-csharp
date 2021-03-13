@@ -15,6 +15,13 @@ namespace BehavioralPatterns.State
 
         private static readonly DaytimeState instance = new DaytimeState();
 
+        public static DaytimeState GetInstance()
+        {
+            // ˅
+            return instance;
+            // ˄
+        }
+
         private DaytimeState()
             // ˅
             
@@ -22,13 +29,6 @@ namespace BehavioralPatterns.State
         {
             // ˅
             
-            // ˄
-        }
-
-        public static DaytimeState GetInstance()
-        {
-            // ˅
-            return instance;
             // ˄
         }
 

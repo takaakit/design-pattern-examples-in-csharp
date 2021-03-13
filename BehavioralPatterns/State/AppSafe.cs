@@ -46,34 +46,6 @@ namespace BehavioralPatterns.State
             // ˄
         }
 
-        private void ButtonUse_Click(object sender, EventArgs e)
-        {
-            // ˅
-            state.UseSafe(this);        // Safe use button pressed
-            // ˄
-        }
-
-        private void ButtonAlarm_Click(object sender, EventArgs e)
-        {
-            // ˅
-            state.SoundBell(this);      // Emergency bell button pressed
-            // ˄
-        }
-
-        private void ButtonPhone_Click(object sender, EventArgs e)
-        {
-            // ˅
-            state.Call(this);           // Normal call button pressed
-            // ˄
-        }
-
-        private void ButtonExit_Click(object sender, EventArgs e)
-        {
-            // ˅
-            this.Close();               // Exit button pressed
-            // ˄
-        }
-
         // Set time
         public void SetTime(int hour)
         {
@@ -115,6 +87,34 @@ namespace BehavioralPatterns.State
         {
             // ˅
             textMessage.AppendText($"record ... {message}{Environment.NewLine}");
+            // ˄
+        }
+
+        private void ButtonUse_Click(object sender, EventArgs e)
+        {
+            // ˅
+            state.UseSafe(this);        // Safe use button pressed
+            // ˄
+        }
+
+        private void ButtonAlarm_Click(object sender, EventArgs e)
+        {
+            // ˅
+            state.SoundBell(this);      // Emergency bell button pressed
+            // ˄
+        }
+
+        private void ButtonPhone_Click(object sender, EventArgs e)
+        {
+            // ˅
+            state.Call(this);           // Normal call button pressed
+            // ˄
+        }
+
+        private void ButtonExit_Click(object sender, EventArgs e)
+        {
+            // ˅
+            this.Close();               // Exit button pressed
             // ˄
         }
 
