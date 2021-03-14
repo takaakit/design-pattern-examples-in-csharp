@@ -14,13 +14,6 @@ namespace BehavioralPatterns.Observer
 
         // ˄
 
-        public override int Value
-        {
-            // ˅
-            get; protected set;
-            // ˄
-        }
-
         private readonly Random random;
 
         public RandomNumber()
@@ -29,7 +22,6 @@ namespace BehavioralPatterns.Observer
             // ˄
         {
             // ˅
-            Value = 0;
             random = new Random();
             
             // ˄

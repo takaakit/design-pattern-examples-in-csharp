@@ -14,12 +14,12 @@ namespace BehavioralPatterns.Observer
         
         // ˄
 
-        public abstract int Value
+        public int Value
         {
             // ˅
             get; protected set;
             // ˄
-        }
+        } = 0;
 
         private readonly List<IObserver> observers;
 
@@ -43,7 +43,7 @@ namespace BehavioralPatterns.Observer
             // ˄
         }
 
-        public void DeleteObserver(IObserver observer)
+        public void RemoveObserver(IObserver observer)
         {
             // ˅
             observers.Remove(observer);
