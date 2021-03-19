@@ -22,7 +22,7 @@ namespace StructuralPatterns.Proxy
         {
             // ˅
             printerName = name;
-            HeavyTask($"Creating an instance({name}) of the Printer");
+            HeavyTask($"Creating an instance ({name}) of the Printer");
             // ˄
         }
 
