@@ -27,7 +27,7 @@ namespace CreationalPatterns.Prototype
             // ˄
         }
 
-        public IDisplay CreateClone()
+        public IDisplay Clone()
         {
             // ˅
             return new FrameDisplay(borderChar);

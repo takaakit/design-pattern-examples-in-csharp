@@ -37,7 +37,7 @@ namespace CreationalPatterns.Prototype.Framework
         {
             // ˅
             IDisplay d = display[displayName];
-            return d.CreateClone();
+            return d.Clone();
             // ˄
         }
 

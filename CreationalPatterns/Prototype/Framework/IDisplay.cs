@@ -10,7 +10,7 @@ namespace CreationalPatterns.Prototype.Framework
     public interface IDisplay
     {
 
-        IDisplay CreateClone();
+        IDisplay Clone();
 
         void Show(string message);
 
