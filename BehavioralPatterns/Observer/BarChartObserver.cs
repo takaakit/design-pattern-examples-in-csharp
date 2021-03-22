@@ -14,16 +14,30 @@ namespace BehavioralPatterns.Observer
         
         // ˄
 
-        public void Update(Number number)
+        private readonly NumberSubject numberSubject;
+
+        public BarChartObserver(NumberSubject numberSubject)
+            // ˅
+            
+            // ˄
         {
             // ˅
-            Console.Write("Bar chart: ");
-            for (int i = 0; i < number.Value; i++)
+            this.numberSubject = numberSubject;
+            // ˄
+        }
+
+        public void Update(Subject changedSubject)
+        {
+            // ˅
+            if (changedSubject == numberSubject)
             {
-                Console.Write("*");
+                Console.Write("Bar chart: ");
+                for (int i = 0; i < numberSubject.Value; i++)
+                {
+                    Console.Write("*");
+                }
+                Console.WriteLine();
             }
-            Console.WriteLine();
-            System.Threading.Thread.Sleep(100);
             // ˄
         }
 

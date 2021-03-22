@@ -10,7 +10,7 @@ namespace BehavioralPatterns.Observer
     public interface IObserver
     {
 
-        void Update(Number number);
+        void Update(Subject changedSubject);
 
         // ˅
         

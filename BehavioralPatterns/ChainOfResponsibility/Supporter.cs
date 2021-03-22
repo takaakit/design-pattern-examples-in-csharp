@@ -60,20 +60,13 @@ namespace BehavioralPatterns.ChainOfResponsibility
             // ˄
         }
 
-        public override string ToString()
-        {
-            // ˅
-            return $"[{name}]";
-            // ˄
-        }
-
         protected abstract bool CanHandle(Trouble trouble);
 
         // Trouble was supported.
         private void Supported(Trouble trouble)
         {
             // ˅
-            Console.WriteLine($"{trouble} was handled by {this}.");
+            Console.WriteLine($"{trouble} was handled by {name}.");
             // ˄
         }
 

@@ -14,11 +14,25 @@ namespace BehavioralPatterns.Observer
         
         // ˄
 
-        public void Update(Number number)
+        private readonly NumberSubject numberSubject;
+
+        public DigitObserver(NumberSubject numberSubject)
+            // ˅
+            
+            // ˄
         {
             // ˅
-            Console.WriteLine($"Digit    : {number.Value}");
-            System.Threading.Thread.Sleep(100);
+            this.numberSubject = numberSubject;
+            // ˄
+        }
+
+        public void Update(Subject changedSubject)
+        {
+            // ˅
+            if (changedSubject == numberSubject)
+            {
+                Console.WriteLine($"Digit    : {numberSubject.Value}");
+            }
             // ˄
         }
 
