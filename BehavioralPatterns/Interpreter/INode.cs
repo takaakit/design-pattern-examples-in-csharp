@@ -13,6 +13,8 @@ namespace BehavioralPatterns.Interpreter
 
         void Parse(Context context);
 
+        string ToString();
+
         // ˅
         
         // ˄

@@ -22,6 +22,8 @@ namespace BehavioralPatterns.State
         // Make a normal call
         void Call(IContext context);
 
+        string ToString();
+
         // ˅
         
         // ˄

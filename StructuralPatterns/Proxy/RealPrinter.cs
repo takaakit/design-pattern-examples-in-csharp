@@ -13,7 +13,7 @@ namespace StructuralPatterns.Proxy
         
         // ˄
 
-        public string printerName;
+        private string name;
 
         public RealPrinter(string name)
             // ˅
@@ -21,8 +21,22 @@ namespace StructuralPatterns.Proxy
             // ˄
         {
             // ˅
-            printerName = name;
+            this.name = name;
             HeavyTask($"Creating an instance ({name}) of the Printer");
+            // ˄
+        }
+
+        public string GetName()
+        {
+            // ˅
+            return name;
+            // ˄
+        }
+
+        public void ChangeName(string name)
+        {
+            // ˅
+            this.name = name;
             // ˄
         }
 
@@ -32,7 +46,7 @@ namespace StructuralPatterns.Proxy
             // ˅
             Console.WriteLine("==========");
             Console.WriteLine(content);
-            Console.WriteLine($"Printed by {printerName}");
+            Console.WriteLine($"Printed by {name}");
             Console.WriteLine("==========");
             // ˄
         }

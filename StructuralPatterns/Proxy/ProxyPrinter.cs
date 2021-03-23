@@ -7,7 +7,7 @@ using System.Text;
 
 namespace StructuralPatterns.Proxy
 {
-    public class PrinterProxy : IPrinter
+    public class ProxyPrinter : IPrinter
     {
         // ˅
         
@@ -15,28 +15,10 @@ namespace StructuralPatterns.Proxy
 
         private string currentName;
 
-        public string PrinterName
-        {
-            // ˅
-            get
-            {
-                return currentName;
-            }
-            set
-            {
-                if (real != null)
-                {
-                    real.printerName = value;
-                }
-                currentName = value;
-            }
-            // ˄
-        }
-
         // A printer that actually prints
         private RealPrinter real;
 
-        public PrinterProxy(string name)
+        public ProxyPrinter(string name)
             // ˅
             
             // ˄
@@ -45,6 +27,24 @@ namespace StructuralPatterns.Proxy
             currentName = name;
             real = null;
             
+            // ˄
+        }
+
+        public string GetName()
+        {
+            // ˅
+            return currentName;
+            // ˄
+        }
+
+        public void ChangeName(string name)
+        {
+            // ˅
+            if (real != null)
+            {
+                real.ChangeName(name);
+            }
+            currentName = name;
             // ˄
         }
 

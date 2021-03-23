@@ -64,7 +64,7 @@ namespace StructuralPatterns.Facade
         }
 
         // Write a link
-        public void Anchor(string url, string text)
+        private void Anchor(string url, string text)
         {
             // ˅
             Paragraph($"<a href=\"{url}\">{text}</a>");
