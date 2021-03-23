@@ -44,7 +44,6 @@ namespace BehavioralPatterns.State
             buttonUse.Click += new System.EventHandler(ButtonUse_Click);
             buttonAlarm.Click += new System.EventHandler(ButtonAlarm_Click);
             buttonPhone.Click += new System.EventHandler(ButtonPhone_Click);
-            buttonExit.Click += new System.EventHandler(ButtonExit_Click);
             // ˄
         }
 
@@ -100,28 +99,21 @@ namespace BehavioralPatterns.State
         private void ButtonUse_Click(object sender, EventArgs e)
         {
             // ˅
-            state.UseSafe(this);        // Use button pressed
+            state.Use(this);
             // ˄
         }
 
         private void ButtonAlarm_Click(object sender, EventArgs e)
         {
             // ˅
-            state.SoundBell(this);      // Alarm button pressed
+            state.Alarm(this);
             // ˄
         }
 
         private void ButtonPhone_Click(object sender, EventArgs e)
         {
             // ˅
-            state.Call(this);           // Phone button pressed
-            // ˄
-        }
-
-        private void ButtonExit_Click(object sender, EventArgs e)
-        {
-            // ˅
-            this.Close();               // Exit button pressed
+            state.Phone(this);
             // ˄
         }
 

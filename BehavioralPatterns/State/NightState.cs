@@ -32,7 +32,6 @@ namespace BehavioralPatterns.State
             // ˄
         }
 
-        // Set time
         public void SetTime(IContext context, int hour)
         {
             // ˅
@@ -43,24 +42,21 @@ namespace BehavioralPatterns.State
             // ˄
         }
 
-        // Use a safe
-        public void UseSafe(IContext context)
+        public void Use(IContext context)
         {
             // ˅
             context.CallSecurityGuardsRoom("Emergency: Use a safe at night!");
             // ˄
         }
 
-        // Sound a emergency bell
-        public void SoundBell(IContext context)
+        public void Alarm(IContext context)
         {
             // ˅
             context.CallSecurityGuardsRoom("Sound a emergency bell at night");
             // ˄
         }
 
-        // Make a normal call
-        public void Call(IContext context)
+        public void Phone(IContext context)
         {
             // ˅
             context.RecordSecurityLog("Record a night call");

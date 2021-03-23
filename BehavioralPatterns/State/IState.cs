@@ -10,17 +10,13 @@ namespace BehavioralPatterns.State
     public interface IState
     {
 
-        // Set time
         void SetTime(IContext context, int hour);
 
-        // Use a safe
-        void UseSafe(IContext context);
+        void Use(IContext context);
 
-        // Sound a emergency bell
-        void SoundBell(IContext context);
+        void Alarm(IContext context);
 
-        // Make a normal call
-        void Call(IContext context);
+        void Phone(IContext context);
 
         string ToString();
 
