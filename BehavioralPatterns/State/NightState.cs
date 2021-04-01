@@ -52,7 +52,7 @@ namespace BehavioralPatterns.State
         public void Alarm(IContext context)
         {
             // ˅
-            context.CallSecurityGuardsRoom("Sound a emergency bell at night");
+            context.CallSecurityGuardsRoom("Sound an emergency bell at night");
             // ˄
         }
 
