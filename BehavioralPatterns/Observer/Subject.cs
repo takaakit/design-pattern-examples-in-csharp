@@ -7,6 +7,7 @@ using System.Text;
 
 namespace BehavioralPatterns.Observer
 {
+    // Provides an interface for attaching and detaching Observer objects.
     public class Subject
     {
         // ˅
