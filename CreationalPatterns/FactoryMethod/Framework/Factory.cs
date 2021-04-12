@@ -16,7 +16,13 @@ namespace CreationalPatterns.FactoryMethod.Framework
         public IProduct Create(string owner)
         {
             // ˅
-            return CreateProduct(owner);
+            // Write pre-creation code here, if any.
+
+            IProduct product = CreateProduct(owner);
+
+            // Write post-creation code here, if any.
+
+            return product;
             // ˄
         }
 
