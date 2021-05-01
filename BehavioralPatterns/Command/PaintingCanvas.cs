@@ -35,14 +35,14 @@ namespace BehavioralPatterns.Command
             // ˄
         }
 
-        public void Paint(double paintingPosX, double paintingPosY)
+        public void Paint(double x, double y)
         {
             // ˅
             var bm = new Bitmap(pictureBox.Image);
             var g = Graphics.FromImage(bm);
             g.FillEllipse(PAINTING_COLOR, new Rectangle(
-                (int)(paintingPosX - (POINT_RADIUS * 0.5)),
-                (int)(paintingPosY - (POINT_RADIUS * 0.5)),
+                (int)(x - (POINT_RADIUS * 0.5)),
+                (int)(y - (POINT_RADIUS * 0.5)),
                 POINT_RADIUS,
                 POINT_RADIUS));
             g.Dispose();
