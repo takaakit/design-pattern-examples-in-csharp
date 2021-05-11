@@ -64,11 +64,10 @@ namespace BehavioralPatterns.Visitor
         }
 
         // Add an element
-        public FileSystemElement Add(FileSystemElement element)
+        public void Add(FileSystemElement element)
         {
             // ˅
             Elements.Add(element);
-            return this;
             // ˄
         }
 

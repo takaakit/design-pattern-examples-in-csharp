@@ -62,11 +62,10 @@ namespace StructuralPatterns.Composite
         }
 
         // Add an element
-        public FileSystemElement Add(FileSystemElement element)
+        public void Add(FileSystemElement element)
         {
             // ˅
             elements.Add(element);
-            return this;
             // ˄
         }
 
