@@ -20,7 +20,7 @@ namespace BehavioralPatterns.Command
         // Painting position y
         private readonly double paintingPosY;
 
-        protected IPaintingTarget paintingTarget;
+        private IPaintingTarget paintingTarget;
 
         public PaintingCommand(IPaintingTarget paintingTarget, double paintingPosX, double paintingPosY)
             // ˅
