@@ -14,8 +14,9 @@ This project is available for the following objectives:
 
 ![](screenshots/CompositePattern.svg "Composite Pattern")
 
+<a id="code-example"></a>
 > C# file example:
----
+
 ```csharp:File class
 // ˅
 using System;
@@ -76,27 +77,31 @@ namespace StructuralPatterns.Composite
 // ˄
 ```
 
-Installation
+Installation on Windows
 ------------
-**Astah**
-* Download Astah UML or Professional from [Change Vision site](http://astah.net/download), and install.  
+**UML Modeling Tool**
+* Download the modeling tool [Astah](http://astah.net/download) UML or Professional, and install.  
+* Download [M PLUS](https://sites.google.com/view/m-plus-plugin/download) plug-in **ver.2.4.0** or higher, and add it to Astah.  
+  [How to add plugins to Astah](https://astahblog.com/2014/12/15/astah_plugins/)
 
-**M PLUS plug-in**
-* Download the plug-in from [M PLUS plug-in site](https://sites.google.com/view/m-plus-plugin/download), and install.  
-  Use **ver.2.4.0** or higher.
-
-**Visual Studio IDE**
-* .NET Core 3.1 is required, so download and install [Visual Studio 2019](https://visualstudio.microsoft.com/vs/) version **16.4** or higher.  
+**Visual Studio**
+* .NET Core 3.1 is required, so download and install [Visual Studio](https://visualstudio.microsoft.com/vs/) version **16.4** or higher.  
   Tested and confirmed to work on Windows 10.
 
-Usage
+Usage on Windows
 -----
-* Select model elements on the model browser of Astah, and press the "Generate code" button to generate.  
-* The generated code has "User Code Area". The "User Code Area" is the area enclosed by "˅" and "˄". Handwritten code written in the "User Code Area" remains after a re-generation.
-* Set up a startup project in Visual Studio, build and run it.
-* For detailed usage of the tools, please see [Astah Manual](http://astah.net/manual) and [M PLUS plug-in Tips](https://sites.google.com/view/m-plus-plugin-tips).
+**Code Generation from UML**
+  1. Open the Astah file (model/DesignPatternExamplesInCsharp.asta).
+  2. Select model elements on the model browser of Astah.
+  3. Click the **Generate Code** button.  
+  ![](screenshots/GenerateCode.gif "Generate Code")  
+  The generated code has **User Code Area**. The User Code Area is the area enclosed by "˅" and "˄". Handwritten code written in the User Code Area remains after a re-generation. [View code example](#code-example).  
+  For detailed usage of the tools, please see [Astah Manual](http://astah.net/manual) and [M PLUS plug-in Tips](https://sites.google.com/view/m-plus-plugin-tips).
 
-![](screenshots/Usage.gif "Usage")
+**Build and Run**
+  1. Open the solution file (design-pattern-examples-in-csharp.sln) in Visual Studio.
+  2. Set up a startup project, and run it.  
+     ![](screenshots/BuildAndRun.gif "Build and Run")  
 
 References
 ----------
