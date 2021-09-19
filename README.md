@@ -17,7 +17,7 @@ This project is available for the following objectives:
 <a id="code-example"></a>
 > C# file example:
 
-```csharp:File class
+```csharp
 // ˅
 using System;
 using System.Collections.Generic;
