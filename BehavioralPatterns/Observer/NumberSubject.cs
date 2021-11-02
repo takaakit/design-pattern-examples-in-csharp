@@ -7,6 +7,7 @@ using System.Text;
 
 namespace BehavioralPatterns.Observer
 {
+    // Holds a value and notifies observers when the value is set.
     public class NumberSubject : Subject
     {
         // ˅
