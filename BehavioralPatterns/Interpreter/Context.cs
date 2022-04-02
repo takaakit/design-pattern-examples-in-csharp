@@ -16,7 +16,7 @@ namespace BehavioralPatterns.Interpreter
 
         private readonly string[] tokens;
 
-        private int currentTokenIndex;
+        private int currentIndex;
 
         public Context(string text)
             // ˅
@@ -25,7 +25,7 @@ namespace BehavioralPatterns.Interpreter
         {
             // ˅
             this.tokens = text.Split(null);
-            this.currentTokenIndex = 0;
+            this.currentIndex = 0;
             
             // ˄
         }
@@ -33,9 +33,9 @@ namespace BehavioralPatterns.Interpreter
         public string NextToken()
         {
             // ˅
-            if (currentTokenIndex < tokens.Length)
+            if (currentIndex < tokens.Length)
             {
-                return tokens[currentTokenIndex++];
+                return tokens[currentIndex++];
             }
             else
             {
@@ -47,16 +47,16 @@ namespace BehavioralPatterns.Interpreter
         public string GetToken()
         {
             // ˅
-            return tokens[currentTokenIndex];
+            return tokens[currentIndex];
             // ˄
         }
 
         public void SlideToken(string token)
         {
             // ˅
-            if (token != tokens[currentTokenIndex])
+            if (token != tokens[currentIndex])
             {
-                throw new System.ArgumentException($"WARNING: {token} is expected but {tokens[currentTokenIndex]} was found.");
+                throw new System.ArgumentException($"WARNING: {token} is expected but {tokens[currentIndex]} was found.");
             }
             NextToken();
             // ˄
