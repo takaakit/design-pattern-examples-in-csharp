@@ -64,7 +64,11 @@ namespace BehavioralPatterns.State
             Console.WriteLine(clockTime);
             if (textTime != null)
             {
-                textTime.Text = clockTime;
+                // Access a form control in the UI thread by using "Invoke".
+                Invoke(new Action(() =>
+                {
+                    textTime.Text = clockTime;
+                }));
             }
             
             state.SetTime(this, hour);
