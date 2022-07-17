@@ -51,7 +51,7 @@ namespace BehavioralPatterns.ChainOfResponsibility
             // ˄
         }
 
-        // Set a next supporter.
+        // Set a next supporter and return it.
         public Supporter SetNext(Supporter next)
         {
             // ˅

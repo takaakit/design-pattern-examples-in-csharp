@@ -28,6 +28,7 @@ namespace BehavioralPatterns.Command
             // ˄
         }
 
+        // Execute all past commands
         public void Execute()
         {
             // ˅

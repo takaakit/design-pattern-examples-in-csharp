@@ -39,6 +39,7 @@ namespace BehavioralPatterns.Interpreter
     {
         static void Main()
         {
+            // Reads commands line by line from the "program.txt" and parses them.
             using (System.IO.StreamReader file = new System.IO.StreamReader(System.IO.Path.GetDirectoryName(System.Environment.CommandLine) + "/../../../program.txt", System.Text.Encoding.UTF8))
             {
                 string text;
