@@ -25,6 +25,7 @@ namespace BehavioralPatterns.Observer
             }
             set
             {
+                // Notify observers when the value is set.
                 _value = value;
                 NotifyObservers();
             }

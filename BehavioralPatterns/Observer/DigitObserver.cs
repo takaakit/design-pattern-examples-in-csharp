@@ -29,6 +29,7 @@ namespace BehavioralPatterns.Observer
         public void Update(Subject changedSubject)
         {
             // ˅
+            // Before processing, it checks to make sure the changed subject is the subject held.
             if (changedSubject == numberSubject)
             {
                 Console.WriteLine($"Digit    : {numberSubject.Value}");
