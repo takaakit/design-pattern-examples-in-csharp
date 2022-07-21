@@ -33,6 +33,7 @@ namespace BehavioralPatterns.State
             Task.Run(() => {
                 while (true)
                 {
+                    // Advance one hour for every second of real time.
                     for (int hour = 0; hour < 24; hour++)
                     {
                         SetTime(hour);      // Set the time

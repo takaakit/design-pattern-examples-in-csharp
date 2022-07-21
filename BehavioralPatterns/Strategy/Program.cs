@@ -19,6 +19,8 @@ namespace BehavioralPatterns.Strategy
             {
                 HandSignal handOfPlayer1 = player1.ShowHandSignal();
                 HandSignal handOfPlayer2 = player2.ShowHandSignal();
+
+                // Judge win, loss, or draw
                 GameResultType resultOfPlayer1;
                 GameResultType resultOfPlayer2;
                 if (handOfPlayer1.IsStrongerThan(handOfPlayer2))
@@ -39,6 +41,7 @@ namespace BehavioralPatterns.Strategy
                     resultOfPlayer1 = GameResultType.Draw;
                     resultOfPlayer2 = GameResultType.Draw;
                 }
+
                 player1.NotifyGameResult(resultOfPlayer1, handOfPlayer1, handOfPlayer2);
                 player2.NotifyGameResult(resultOfPlayer2, handOfPlayer2, handOfPlayer1);
             }
