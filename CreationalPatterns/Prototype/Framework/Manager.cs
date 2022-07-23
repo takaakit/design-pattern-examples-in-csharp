@@ -37,7 +37,7 @@ namespace CreationalPatterns.Prototype.Framework
         {
             // ˅
             IDisplay d = display[displayName];
-            return d.Clone();
+            return d.Clone();       // Create a new object by asking a concrete class to clone itself. Therefore, do not need to know the concrete Display class name.
             // ˄
         }
 
