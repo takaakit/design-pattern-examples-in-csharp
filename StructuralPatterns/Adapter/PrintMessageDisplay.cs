@@ -7,6 +7,7 @@ using System.Text;
 
 namespace StructuralPatterns.Adapter
 {
+    // Adapt the MessageDisplay interface to the Print interface.
     public class PrintMessageDisplay : MessageDisplay, IPrint
     {
         // ˅
