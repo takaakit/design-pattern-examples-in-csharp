@@ -33,7 +33,14 @@ namespace StructuralPatterns.Proxy
         public string GetName()
         {
             // ˅
-            return currentName;
+            if (real != null)
+            {
+                return real.GetName();
+            }
+            else
+            {
+                return currentName;
+            }
             // ˄
         }
 
