@@ -7,6 +7,7 @@ using System.Text;
 
 namespace StructuralPatterns.Proxy
 {
+    // ProxyPrinter forwards requests to RealPrinter when appropriate.
     public class ProxyPrinter : IPrinter
     {
         // ˅
@@ -51,6 +52,7 @@ namespace StructuralPatterns.Proxy
             {
                 real.ChangeName(name);
             }
+            
             currentName = name;
             // ˄
         }
@@ -58,10 +60,12 @@ namespace StructuralPatterns.Proxy
         public void Output(string content)
         {
             // ˅
+            // Check to see if the the RealPrinter had been created, create it if necessary.
             if (real == null)
             {
                 real = new RealPrinter(currentName);
             }
+            
             real.Output(content);
             // ˄
         }
