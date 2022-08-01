@@ -60,7 +60,7 @@ namespace StructuralPatterns.Proxy
         public void Output(string content)
         {
             // ˅
-            // Check to see if the the RealPrinter had been created, create it if necessary.
+            // Check to see if the RealPrinter had been created, create it if necessary.
             if (real == null)
             {
                 real = new RealPrinter(currentName);
