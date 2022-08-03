@@ -49,11 +49,11 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Flyweight", "StructuralPatt
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Proxy", "StructuralPatterns\Proxy\Proxy.csproj", "{2DDED741-90B9-4AB2-94EC-0AC0586921A1}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Command", "BehavioralPatterns\Command\Command.csproj", "{A8193588-1CCD-49E9-B492-70D6EE08EF73}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Command", "BehavioralPatterns\Command\Command.csproj", "{A8193588-1CCD-49E9-B492-70D6EE08EF73}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Mediator", "BehavioralPatterns\Mediator\Mediator.csproj", "{E9E13ECE-A9BF-446E-B5B2-1709996B6F33}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Mediator", "BehavioralPatterns\Mediator\Mediator.csproj", "{E9E13ECE-A9BF-446E-B5B2-1709996B6F33}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "State", "BehavioralPatterns\State\State.csproj", "{D59C769F-F04D-468B-B943-C320D561388F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "State", "BehavioralPatterns\State\State.csproj", "{D59C769F-F04D-468B-B943-C320D561388F}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
