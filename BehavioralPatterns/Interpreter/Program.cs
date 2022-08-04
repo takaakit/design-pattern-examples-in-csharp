@@ -40,16 +40,12 @@ namespace BehavioralPatterns.Interpreter
         static void Main()
         {
             // Reads commands line by line from the "program.txt" and parses them.
-            using (System.IO.StreamReader file = new System.IO.StreamReader(System.IO.Path.GetDirectoryName(System.Environment.CommandLine) + "/../../../program.txt", System.Text.Encoding.UTF8))
+            foreach (string line in System.IO.File.ReadLines(System.IO.Path.GetDirectoryName(System.Environment.CommandLine) + "/../../../program.txt", System.Text.Encoding.UTF8))
             {
-                string text;
-                while ((text = file.ReadLine()) != null)
-                {
-                    Console.WriteLine($"Before parsing : {text}");
-                    INode node = new Head();
-                    node.Parse(new Context(text));
-                    Console.WriteLine($"After parsing  : {node}");
-                }
+                Console.WriteLine($"Before parsing : {line}");
+                INode node = new Head();
+                node.Parse(new Context(line));
+                Console.WriteLine($"After parsing  : {node}");
             }
         }
     }

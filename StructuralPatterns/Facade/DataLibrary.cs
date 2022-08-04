@@ -37,30 +37,27 @@ namespace StructuralPatterns.Facade
         public Dictionary<string, string> GetData(string dataLibraryFileName)
         {
             // ˅
-            using (StreamReader file = new StreamReader(dataLibraryFileName, System.Text.Encoding.UTF8))
-            {
-                Dictionary<string, string> data = new Dictionary<string, string>();
-                string line;
-                while ((line = file.ReadLine()) != null)
-                {
-                    string[] keyAndValue = line.Split("=");
-                    if (keyAndValue.Length == 2)
-                    {
-                        data.Add(keyAndValue[0], keyAndValue[1]);
-                    }
-                    else
-                    {
-                        throw new FormatException();
-                    }
-                }
+            Dictionary<string, string> data = new Dictionary<string, string>();
 
-                return data;
+            foreach (string line in System.IO.File.ReadLines(dataLibraryFileName, System.Text.Encoding.UTF8))
+            {
+                string[] keyAndValue = line.Split("=");
+                if (keyAndValue.Length == 2)
+                {
+                    data.Add(keyAndValue[0], keyAndValue[1]);
+                }
+                else
+                {
+                    throw new FormatException();
+                }
             }
+
+            return data;
             // ˄
         }
 
         // ˅
-        
+
         // ˄
     }
 }

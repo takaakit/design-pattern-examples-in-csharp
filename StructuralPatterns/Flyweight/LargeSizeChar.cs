@@ -23,19 +23,9 @@ namespace StructuralPatterns.Flyweight
             // ˄
         {
             // ˅
-            displayData = null;
             try
             {
-                StreamReader reader = new StreamReader($"{System.IO.Path.GetDirectoryName(System.Environment.CommandLine)}/../../../big{charName}.txt", System.Text.Encoding.UTF8);
-                StringBuilder builder = new StringBuilder();
-                string line;
-                while ((line = reader.ReadLine()) != null)
-                {
-                    builder.Append(line);
-                    builder.Append("\n");
-                }
-                reader.Close();
-                displayData = builder.ToString();
+                displayData = System.IO.File.ReadAllText($"{System.IO.Path.GetDirectoryName(System.Environment.CommandLine)}/../../../big{charName}.txt", System.Text.Encoding.UTF8);
             }
             catch
             {
