@@ -40,7 +40,8 @@ namespace BehavioralPatterns.Interpreter
         static void Main()
         {
             // Reads commands line by line from the "program.txt" and parses them.
-            foreach (string line in System.IO.File.ReadLines(System.IO.Path.GetDirectoryName(System.Environment.CommandLine) + "/../../../program.txt", System.Text.Encoding.UTF8))
+            string projectDirectory = System.IO.Directory.GetParent(Environment.CurrentDirectory).Parent.Parent.FullName;
+            foreach (string line in System.IO.File.ReadLines($"{projectDirectory}/program.txt", System.Text.Encoding.UTF8))
             {
                 Console.WriteLine($"Before parsing : {line}");
                 INode node = new Head();

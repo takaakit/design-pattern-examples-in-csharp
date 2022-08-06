@@ -25,7 +25,8 @@ namespace StructuralPatterns.Flyweight
             // ˅
             try
             {
-                displayData = System.IO.File.ReadAllText($"{System.IO.Path.GetDirectoryName(System.Environment.CommandLine)}/../../../big{charName}.txt", System.Text.Encoding.UTF8);
+                string projectDirectory = System.IO.Directory.GetParent(Environment.CurrentDirectory).Parent.Parent.FullName;
+                displayData = System.IO.File.ReadAllText($"{projectDirectory}/big{charName}.txt", System.Text.Encoding.UTF8);
             }
             catch
             {

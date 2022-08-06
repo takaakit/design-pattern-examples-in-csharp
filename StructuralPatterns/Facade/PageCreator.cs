@@ -36,7 +36,8 @@ namespace StructuralPatterns.Facade
         public void CreateSimpleHomepage(string mailAddress, string htmlFileName)
         {
             // ˅
-            Dictionary<string, string> addressBook = DataLibrary.GetInstance().GetData(System.IO.Path.GetDirectoryName(Environment.CommandLine) + "/../../../addressbook.txt");
+            string projectDirectory = System.IO.Directory.GetParent(Environment.CurrentDirectory).Parent.Parent.FullName;
+            Dictionary<string, string> addressBook = DataLibrary.GetInstance().GetData($"{projectDirectory}/addressbook.txt");
             string userName = addressBook[mailAddress];
             HtmlWriter writer = new HtmlWriter(new StreamWriter(htmlFileName));
             writer.Heading($"{userName}'s homepage");
