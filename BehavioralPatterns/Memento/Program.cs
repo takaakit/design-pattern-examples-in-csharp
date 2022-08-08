@@ -28,7 +28,7 @@ namespace BehavioralPatterns.Memento
                 // Determine the behavior of the Memento
                 if (gamer.Money > memento.Money)
                 {
-                    Console.WriteLine("(Gamers' money is the highest ever, so record the current state.)");
+                    Console.WriteLine("(Gamer's money is the highest ever, so record the current state.)");
                     memento = gamer.CreateMemento();
                 }
                 else if (gamer.Money < memento.Money / 2)
