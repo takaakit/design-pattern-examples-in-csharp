@@ -35,10 +35,9 @@ namespace CreationalPatterns.Prototype
         public void Show(string message)
         {
             // ˅
-            int length = message.Length;
             Console.WriteLine($"\"{message}\"");
             Console.Write(" ");
-            for (int i = 0; i < length; i++)
+            for (int i = 0; i < message.Length; i++)
             {
                 Console.Write(underlineChar);
             }

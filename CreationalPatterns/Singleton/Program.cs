@@ -12,7 +12,7 @@ namespace CreationalPatterns.Singleton
         {
             Singleton obj1 = Singleton.GetInstance();
             Singleton obj2 = Singleton.GetInstance();
-            if (obj1 == obj2)
+            if (obj1.Equals(obj2))
             {
                 Console.WriteLine("obj1 and obj2 are the same instance.");
             }

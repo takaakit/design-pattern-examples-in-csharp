@@ -35,14 +35,13 @@ namespace CreationalPatterns.Prototype
         public void Show(string message)
         {
             // ˅
-            int length = message.Length;
-            for (int i = 0; i < length + 4; i++)
+            for (int i = 0; i < message.Length + 4; i++)
             {
                 Console.Write(borderChar);
             }
             Console.WriteLine();
             Console.WriteLine($"{borderChar} {message} {borderChar}");
-            for (int i = 0; i < length + 4; i++)
+            for (int i = 0; i < message.Length + 4; i++)
             {
                 Console.Write(borderChar);
             }

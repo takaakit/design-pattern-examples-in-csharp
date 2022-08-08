@@ -63,12 +63,7 @@ namespace StructuralPatterns.Decorator
         private string CreateLine(char ch, int size)
         {
             // ˅
-            StringBuilder builder = new StringBuilder();
-            for (int i = 0; i < size; i++)
-            {
-                builder.Append(ch);
-            }
-            return builder.ToString();
+            return new string(ch, size);
             // ˄
         }
 
