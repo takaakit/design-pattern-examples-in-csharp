@@ -51,9 +51,9 @@ namespace BehavioralPatterns.Interpreter
         public void SlideToken(string token)
         {
             // ˅
-            if (token != tokens[currentIndex])
+            if (token != GetToken())
             {
-                throw new System.ArgumentException($"WARNING: {token} is expected but {tokens[currentIndex]} was found.");
+                throw new System.ArgumentException($"WARNING: {token} is expected but {GetToken()} was found.");
             }
             NextToken();
             // ˄
