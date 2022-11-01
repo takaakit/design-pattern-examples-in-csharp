@@ -85,8 +85,9 @@ Installation on Windows
   [How to add plugins to Astah](https://astahblog.com/2014/12/15/astah_plugins/)
 
 **Visual Studio**
-* .NET Core 3.1 is required, so download and install [Visual Studio](https://visualstudio.microsoft.com/vs/) version **16.4** or higher.  
-  Tested and confirmed to work on Windows 10.
+* Download and install [Visual Studio](https://visualstudio.microsoft.com/vs/).  
+  Check "**.NET desktop development**" when installing.  
+  ![](screenshots/VisualStudioInstaller.png "Visual Studio Installer")
 
 Usage on Windows
 -----
