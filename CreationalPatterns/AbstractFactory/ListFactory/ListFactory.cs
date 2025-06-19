@@ -5,27 +5,27 @@ using CreationalPatterns.AbstractFactory.Factory;
 
 namespace CreationalPatterns.AbstractFactory.ListFactory
 {
-    public class ListFactory : BaseFactory
+    public class ListFactory : IFactory
     {
         // ˅
         
         // ˄
 
-        public override Page CreatePage(string title, string author)
+        public Page CreatePage(string title, string author)
         {
             // ˅
             return new ListPage(title, author);
             // ˄
         }
 
-        public override Link CreateLink(string name, string url)
+        public Link CreateLink(string name, string url)
         {
             // ˅
             return new ListLink(name, url);
             // ˄
         }
 
-        public override Data CreateData(string name)
+        public Data CreateData(string name)
         {
             // ˅
             return new ListData(name);

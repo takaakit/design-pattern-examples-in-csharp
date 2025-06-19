@@ -5,27 +5,27 @@ using CreationalPatterns.AbstractFactory.Factory;
 
 namespace CreationalPatterns.AbstractFactory.TableFactory
 {
-    public class TableFactory : BaseFactory
+    public class TableFactory : IFactory
     {
         // ˅
         
         // ˄
 
-        public override Page CreatePage(string title, string author)
+        public Page CreatePage(string title, string author)
         {
             // ˅
             return new TablePage(title, author);
             // ˄
         }
 
-        public override Link CreateLink(string name, string url)
+        public Link CreateLink(string name, string url)
         {
             // ˅
             return new TableLink(name, url);
             // ˄
         }
 
-        public override Data CreateData(string name)
+        public Data CreateData(string name)
         {
             // ˅
             return new TableData(name);
